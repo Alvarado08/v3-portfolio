@@ -1,8 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import SocialPill from '../components/SocialPill.astro';
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
+import GitHubIcon from '../components/icons/GitHubIcon.astro';
+import MailIcon from '../components/icons/MailIcon.astro';
+import HashNodeIcon from '../components/icons/HashNodeIcon.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main></main>
+<Layout 
+title="Jorge Alvarado - Web Developer and Programmer"
+description="Jorge Alvarado's portfolio and personal website. Computer Engineer | Front End Developer | Full Stack Developer">
+	<main>
+		<section class="w-full mx-auto lg:w-[740px] py-40">
+			<img class="rounded-full size-20 object-cover mb-2" src="/profile.png" alt="Jorge Alvarado photo">
+			<h1 class="text-5xl font-bold pb-2">Hey, I'm Jorge Alvarado</h1>
+			<h2 class="text-2xl text-wrap">
+				<span class="text-yellow-500/90">Web Developer.</span> <span>I love creating beautiful UIs, <span class="text-blue-600/80">solving problems</span> and bringing ideas to <span class="text-green-600/80">life</span> with code.</span>
+			</h2>
+			<nav class="flex gap-x-3 mt-2">
+				<SocialPill href="https://linkedin.com/in/jorgep-alvarado">
+					<LinkedInIcon class="size-6"/>
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/alvarado08">
+					<GitHubIcon class="size-6"/>
+					GitHub
+				</SocialPill>
+				<SocialPill href="https://jalvarado.hashnode.dev">
+					<HashNodeIcon class="size-6"/>
+					Hashnode
+				</SocialPill>
+			</nav>
+		</section>
+	</main>
 </Layout>
