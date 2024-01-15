@@ -1,27 +1,57 @@
 ---
+import AstroIcon from '../components/icons/tools/AstroIcon.astro';
+import TailwindIcon from '../components/icons/tools/TailwindIcon.astro';
+import JavaScriptIcon from '../components/icons/tools/JavaScriptIcon.astro';
+
+const TAGS = {
+    ASTRO: {
+        name: 'Astro',
+        icon: AstroIcon
+    },
+    TAILWIND: {
+        name: 'Tailwind CSS',
+        icon: TailwindIcon
+    },
+    JAVASCRIPT: {
+        name: 'JavaScript',
+        icon: JavaScriptIcon
+    }
+}
+
 const PROJECTS = [
     {
-        title: 'My Awesome Project',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        link: '#',
+        title: 'Iglesia Bautista Dios Proveera Blog',
+        description: 'Iglesia Bautista Dios Proveera local church website with a blog focus.',
+        link: 'https://iglesiadiosproveera.com',
         github: '#',
-        image: '#',
-        tags:['Astro','Tailwind CSS']
+        image: '/projects/diosproveera.webp',
+        tags:[TAGS.ASTRO,TAGS.TAILWIND]
+    },
+    {
+        title: 'Library App',
+        description: 'A digital bookshelf that can create and delete a book as well as update its reading status.',
+        link: 'https://alvarado08.github.io/library/',
+        github: 'https://github.com/Alvarado08/library',
+        image: '/projects/library.webp',
+        tags:[TAGS.JAVASCRIPT,TAGS.TAILWIND]
     }
 ]
 ---
 
 {
     PROJECTS.map(({title,description,image,tags}) => (
-        <article>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <ul>
+        <article class="space-y-3">
+            <h3 class="text-xl md:text-2xl font-semibold">{title}</h3>
+            <p class="text-lg md:text-xl text-pretty">{description}</p>
+            <ul class="flex items-center gap-x-3">
                 {tags.map(tag => (
-                    <li>{tag}</li>
+                    <li class="flex items-center gap-x-2">
+                        <tag.icon class="size-6"/>
+                        {tag.name}
+                    </li>
                 ))}
             </ul>
-            <img src={image} alt={`Preview for ${title}`}>
+            <img class="rounded shadow-md" src={image} alt={`Preview for ${title}`}>
         </article>
     ))
 }
