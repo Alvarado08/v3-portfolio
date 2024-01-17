@@ -39,6 +39,116 @@ const { title, description } = Astro.props;
 		flex-direction: column;
 		justify-content: center;
 	}
+	/* Utility Classes */
+	.animate {
+		animation-duration: 1s;
+		animation-fill-mode: both;
+	}
+	.animate.animate--profile {
+		animation-delay: 0s;
+	}
+	.animate.animate--intro {
+		animation-delay: 1s;
+	}
+	.animate.animate--me-1 {
+		animation-delay: 2s;
+		animation-duration: 0.6s;
+	}
+	.animate.animate--me-2 {
+		animation-delay: 3s;
+		animation-duration: 0.6s;
+	}
+	.animate.animate--me-3 {
+		animation-delay: 4s;
+		animation-duration: 0.6s;
+	}
+	.animate.animate--me-4 {
+		animation-delay: 5s;
+		animation-duration: 0.6s;
+	}
+	.animate.animate--pill-1 {
+		animation-delay: 6s;
+	}
+	/* Animations */
+	@keyframes projectShow {
+		from {
+			opacity: 0;
+			scale: 25%;
+		}
+		to {
+			opacity: 1;
+			scale: 100%;
+		}
+	}
+	@keyframes showProfile {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@keyframes showMe {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@keyframes slideInRight {
+		from {
+			opacity: 0;
+			transform: translateX(300px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+	@keyframes slideUp {
+		from {
+			opacity: 0;
+			transform: translateY(100px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	.profile {
+		animation-name: showProfile;
+		animation-timing-function: ease-in;
+	}
+	.intro {
+		animation-name: slideInRight;
+		animation-timing-function: ease-in;
+		/* 
+		animation-name: slideInLeft;
+		Duration to complete 1 lap
+		animation-duration: 1s;
+		animation-timing-function: ease-in;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: none; */
+	}
+	.intro-me {
+		animation-name: showMe;
+		animation-timing-function: ease-in;
+	}
+	.socialPills {
+		animation-name: slideUp;
+		animation-timing-function: ease-in;
+	}
+	.projects {
+		view-timeline-name: --image;
+		view-timeline-axis: block;
+		animation-timeline: --image;
+		animation-name: projectShow;
+		animation-range: entry 25% cover 50%;
+		animation-fill-mode: both;
+	}
 	@media (prefers-reduced-motion: reduce){
 		html {
 			scroll-behavior: auto;

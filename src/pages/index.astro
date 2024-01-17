@@ -8,6 +8,7 @@ import MailIcon from '../components/icons/MailIcon.astro';
 import HashNodeIcon from '../components/icons/HashNodeIcon.astro';
 import CodeIcon from '../components/icons/CodeIcon.astro';
 import Projects from '../components/Projects.astro';
+import AboutMeIntro from '../components/AboutMeIntro.astro';
 ---
 
 <Layout 
@@ -15,12 +16,12 @@ title="Jorge Alvarado - Web Developer and Programmer"
 description="Jorge Alvarado's portfolio and personal website. Computer Engineer | Front-End Developer | Full-Stack Developer">
 	<main class="px-5">
 		<section class="w-full mx-auto lg:w-[740px] py-40 space-y-5">
-			<img class="max-w-[150px] max-h-[150px] object-cover overflow-hidden rounded-full" src="/profile.png" alt="Jorge Alvarado photo">
-			<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">Hey, I'm Jorge Alvarado</h1>
+			<img class="max-w-[150px] max-h-[150px] object-cover overflow-hidden rounded-full profile animate animate--profile" src="/profile.png" alt="Jorge Alvarado photo">
+			<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold intro animate animate--intro">Hey, I'm Jorge Alvarado</h1>
 			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-				<span class="text-yellow-500/90">Web Developer</span>. I love <span class="text-red-500/90">crafting</span><span> beautiful UIs, <span class="text-blue-600/80">solving problems</span> and bringing ideas to <span class="text-green-600/80">life</span> with code.</span>
+				<AboutMeIntro/>
 			</h2>
-			<nav class="flex gap-3 flex-wrap">
+			<nav class="socialPills animate animate--pill-1 flex gap-3 flex-wrap">
 				<SocialPill href="https://linkedin.com/in/jorgep-alvarado">
 					<LinkedInIcon class="size-4 md:size-6"/>
 					LinkedIn
@@ -35,7 +36,7 @@ description="Jorge Alvarado's portfolio and personal website. Computer Engineer 
 				</SocialPill>
 			</nav>
 		</section>
-		<section id="projects" class="w-full mx-auto lg:w-[740px] py-40 space-y-5">
+		<section id="projects" class="w-full mx-auto lg:w-[740px] py-40 space-y-7">
 			<h2 class="text-2xl lg:text-3xl flex items-center gap-x-3 font-semibold">
 				<CodeIcon class="size-6"/>
 				Projects
