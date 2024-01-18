@@ -1,9 +1,17 @@
-<header class="flex justify-between items-center py-3 px-5 w-full xl:w-[1120px] mx-auto">
+---
+import MobileMenu from "./icons/MobileMenu.astro";
+---
+<header class="flex justify-between items-center py-4 px-8 w-full xl:w-[1120px] mx-auto">
     <img class="size-14" src="/brand.png" alt="Jorge Alvarado brand">
-    <nav class="flex font-semibold items-center gap-x-5 opacity-80">
+    <nav class="hidden sm:flex font-semibold items-center gap-x-5 opacity-80">
         <a href="/">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+    </nav>
+    <nav class="block sm:hidden">
+        <button>
+            <MobileMenu class="size-6"/>
+        </button>
     </nav>
 </header>

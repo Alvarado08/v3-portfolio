@@ -2,6 +2,9 @@
 import AstroIcon from '../components/icons/tools/AstroIcon.astro';
 import TailwindIcon from '../components/icons/tools/TailwindIcon.astro';
 import JavaScriptIcon from '../components/icons/tools/JavaScriptIcon.astro';
+import WordPressIcon from '../components/icons/tools/WordPressIcon.astro';
+import LiveSiteIcon from '../components/icons/LiveSiteIcon.astro';
+import GitHubIcon from '../components/icons/GitHubIcon.astro';
 
 const TAGS = {
     ASTRO: {
@@ -15,6 +18,10 @@ const TAGS = {
     JAVASCRIPT: {
         name: 'JavaScript',
         icon: JavaScriptIcon
+    },
+    WORDPRESS: {
+        name: 'Wordpress',
+        icon: WordPressIcon
     }
 }
 
@@ -23,7 +30,7 @@ const PROJECTS = [
         title: 'Iglesia Bautista Dios Proveera Blog',
         description: 'Iglesia Bautista Dios Proveera local church website with a blog focus.',
         link: 'https://iglesiadiosproveera.com',
-        github: '#',
+        github: '',
         image: '/projects/diosproveera.webp',
         tags:[TAGS.ASTRO,TAGS.TAILWIND]
     },
@@ -34,15 +41,35 @@ const PROJECTS = [
         github: 'https://github.com/Alvarado08/library',
         image: '/projects/library.webp',
         tags:[TAGS.JAVASCRIPT,TAGS.TAILWIND]
+    },
+    {
+        title: 'Rayados Waller Academy Website',
+        description: 'Rayados Waller Academy local soccer league website that concentrates league information and offers online player registrations.',
+        link: 'https://rayadoswaller.org',
+        github: '',
+        image: '/projects/rayadoswaller.webp',
+        tags:[TAGS.WORDPRESS]
     }
 ]
 ---
 
 {
-    PROJECTS.map(({title,description,image,tags}) => (
+    PROJECTS.map(({title,description,link,github,image,tags}) => (
         <article class="space-y-3">
             <h3 class="text-xl md:text-2xl font-semibold">{title}</h3>
             <p class="text-lg md:text-xl text-pretty">{description}</p>
+            <p class="flex items-center gap-x-3">
+                {link !== '' && <a class="inline-flex items-center gap-x-1 font-semibold text-red-500/90 text-lg" href={link} target="_blank" rel="noopener noreferrer">
+                    Live
+                    <LiveSiteIcon class="size-6 text-black"/>
+                    </a> 
+                }
+                {github !== '' && <a class="inline-flex items-center gap-x-1 font-semibold text-blue-600/80 text-lg" href={github} target="_blank" rel="noopener noreferrer">
+                    Code
+                    <GitHubIcon class="size-6 text-black"/>
+                    </a> 
+                }
+            </p>
             <ul class="flex items-center gap-x-3">
                 {tags.map(tag => (
                     <li class="flex items-center gap-x-2">

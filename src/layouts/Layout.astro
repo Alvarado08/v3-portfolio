@@ -17,7 +17,17 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta property="og:title" content="Jorge Alvarado - Web Developer and Programmer"/>
+		<meta property="og:description" content="Jorge Alvarado's portfolio and personal website. Computer Engineer | Front-End Developer | Full-Stack Developer"/>
+		<meta property="og:url" content="https://jalvarado.netlify.app/"/>
+		<meta property="og:image" content="https://raw.githubusercontent.com/Alvarado08/v3-portfolio/main/public/brand.png"/>
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="jalvarado.netlify.app">
+		<meta property="twitter:url" content="https://jalvarado.netlify.app">
+		<meta name="twitter:title" content="Jorge Alvarado - Web Developer and Programmer">
+		<meta name="twitter:description" content="Jorge Alvarado's portfolio and personal website. Computer Engineer | Front-End Developer | Full-Stack Developer">
+		<meta name="twitter:image" content="https://raw.githubusercontent.com/Alvarado08/v3-portfolio/main/public/brand.png">
+		<link rel="icon" type="image/x-icon" href="/brand.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -115,6 +125,9 @@ const { title, description } = Astro.props;
 			opacity: 1;
 			transform: translateY(0);
 		}
+	}
+	#dropdown {
+		right: 30px;
 	}
 	.profile {
 		animation-name: showProfile;
