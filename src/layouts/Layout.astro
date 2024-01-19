@@ -2,6 +2,7 @@
 import "@fontsource/onest";
 import "@fontsource/onest/600.css";
 import Header from '../components/Header.astro';
+import Footer from "../components/Footer.astro";
 
 interface Props {
 	title: string;
@@ -35,6 +36,7 @@ const { title, description } = Astro.props;
 		<div class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
 		<Header/>
 		<slot />
+		<Footer/>
 	</body>
 </html>
 <style is:global>
@@ -54,30 +56,30 @@ const { title, description } = Astro.props;
 		animation-duration: 1s;
 		animation-fill-mode: both;
 	}
+	.animate--fast{
+		animation-duration: 0.9s;
+		animation-fill-mode: both;
+	}
 	.animate.animate--profile {
 		animation-delay: 0s;
 	}
 	.animate.animate--intro {
 		animation-delay: 1s;
 	}
-	.animate.animate--me-1 {
-		animation-delay: 2s;
-		animation-duration: 0.6s;
+	.animate--fast.animate--me-1 {
+		animation-delay: 1.3s;
 	}
-	.animate.animate--me-2 {
-		animation-delay: 3s;
-		animation-duration: 0.6s;
+	.animate--fast.animate--me-2 {
+		animation-delay: 1.5s;
 	}
-	.animate.animate--me-3 {
-		animation-delay: 4s;
-		animation-duration: 0.6s;
+	.animate--fast.animate--me-3 {
+		animation-delay: 1.7s;
 	}
-	.animate.animate--me-4 {
-		animation-delay: 5s;
-		animation-duration: 0.6s;
+	.animate--fast.animate--me-4 {
+		animation-delay: 1.9s;
 	}
 	.animate.animate--pill-1 {
-		animation-delay: 6s;
+		animation-delay: 2s;
 	}
 	/* Animations */
 	@keyframes projectShow {
