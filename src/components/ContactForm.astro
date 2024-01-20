@@ -37,13 +37,14 @@
     </div>
     <button
         type="submit"
+        aria-label="Submit form"
         class="text-white bg-blue-600 hover:bg-blue-600/90 transition ease-in-out delay-100 duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
         >Submit</button
     >
     <p id="my-form-status" class="mt-5 text-green-600 font-semibold"></p>
 </form>
 <script>
-    let form = document.getElementById("my-form");
+    let form = document.getElementById("my-form") as HTMLFormElement | null;
     
     async function handleSubmit(event) {
       event.preventDefault();

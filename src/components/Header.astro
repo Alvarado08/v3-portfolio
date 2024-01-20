@@ -1,7 +1,7 @@
 ---
 import MobileMenu from "./icons/MobileMenu.astro";
 ---
-<header class="flex justify-between items-center py-4 px-8 w-full xl:w-[1120px] mx-auto sticky bg-white sm:bg-transparent shadow-sm sm:shadow-none sm:static top-0 z-10">
+<header class="flex justify-between items-center py-4 px-8 w-full xl:w-[1120px] mx-auto sticky backdrop-blur-sm sm:backdrop-blur-none sm:static top-0 z-10">
     <img class="size-12 sm:size-14" src="/brand.png" alt="Jorge Alvarado brand">
     <nav class="hidden sm:flex font-semibold items-center gap-x-5 opacity-80">
         <a href="#about">About</a>
@@ -9,9 +9,25 @@ import MobileMenu from "./icons/MobileMenu.astro";
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
-    <nav class="block sm:hidden">
-        <button>
-            <MobileMenu class="size-6"/>
-        </button>
+    <nav x-data="{openmenu:false}" class="dropdown inline-block sm:hidden">
+        <label tabindex="0">
+            <button aria-label="Mobile Menu" @click="openmenu = !openmenu;" @click.outside="if(openmenu)openmenu = !openmenu">
+                <MobileMenu class="size-6"/>
+            </button>
+        </label>
+        <ul x-show="openmenu" x-transition tabindex="0" class="menu menu-md dropdown-content mt-3 z-[10] p-2 shadow rounded-box w-40 right-5 bg-base-100">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
     </nav>
 </header>
