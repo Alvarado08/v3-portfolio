@@ -60,8 +60,12 @@ const { title, description } = Astro.props;
 		animation-duration: 0.9s;
 		animation-fill-mode: both;
 	}
-	.animate.animate--profile {
-		animation-delay: 0s;
+	.animate--slow{
+		animation-duration: 1.5s;
+		animation-fill-mode: both;
+	}
+	.animate--slow.animate--profile {
+		animation-delay: 0.5s;
 	}
 	.animate.animate--intro {
 		animation-delay: 1s;
@@ -86,17 +90,22 @@ const { title, description } = Astro.props;
 		from {
 			opacity: 0;
 			scale: 25%;
+			-webkit-transform: scale(0.25);
 		}
 		to {
 			opacity: 1;
 			scale: 100%;
+			-webkit-transform: scale(1);
 		}
 	}
 	@keyframes showProfile {
-		from {
+		0% {
 			opacity: 0;
 		}
-		to {
+		50% {
+			opacity: 0.5;
+		}
+		100% {
 			opacity: 1;
 		}
 	}
