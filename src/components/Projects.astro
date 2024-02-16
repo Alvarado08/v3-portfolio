@@ -2,6 +2,7 @@
 import AstroIcon from '../components/icons/tools/AstroIcon.astro';
 import TailwindIcon from '../components/icons/tools/TailwindIcon.astro';
 import JavaScriptIcon from '../components/icons/tools/JavaScriptIcon.astro';
+import TypescriptIcon from './icons/tools/TypeScriptIcon.astro';
 import WordPressIcon from '../components/icons/tools/WordPressIcon.astro';
 import LiveSiteIcon from '../components/icons/LiveSiteIcon.astro';
 import GitHubIcon from '../components/icons/GitHubIcon.astro';
@@ -19,6 +20,10 @@ const TAGS = {
         name: 'JavaScript',
         icon: JavaScriptIcon
     },
+    TYPESCRIPT: {
+        name: 'TypeScript',
+        icon: TypescriptIcon
+    },
     WORDPRESS: {
         name: 'Wordpress',
         icon: WordPressIcon
@@ -33,6 +38,14 @@ const PROJECTS = [
         github: '',
         image: '/projects/diosproveera.webp',
         tags:[TAGS.ASTRO,TAGS.TAILWIND]
+    },
+    {
+        title: 'Weather Forecast',
+        description: 'A minimalist weather forecast consuming the OpenWeatherAPI. Displays a loading skeleton and handles errors.',
+        link: 'https://alvarado08.github.io/weather-app/',
+        github: 'https://github.com/Alvarado08/weather-app',
+        image: '/projects/weather.webp',
+        tags:[TAGS.TYPESCRIPT,TAGS.TAILWIND]
     },
     {
         title: 'Library App',
