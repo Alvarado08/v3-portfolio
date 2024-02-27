@@ -1,0 +1,97 @@
+---
+import AstroIcon from './icons/tools/AstroIcon.astro';
+import TailwindIcon from './icons/tools/TailwindIcon.astro';
+import JavaScriptIcon from './icons/tools/JavaScriptIcon.astro';
+import TypescriptIcon from './icons/tools/TypeScriptIcon.astro';
+import WordPressIcon from './icons/tools/WordPressIcon.astro';
+import LiveSiteIcon from './icons/LiveSiteIcon.astro';
+import GitHubIcon from './icons/GitHubIcon.astro';
+
+const TAGS = {
+    ASTRO: {
+        name: 'Astro',
+        icon: AstroIcon
+    },
+    TAILWIND: {
+        name: 'Tailwind CSS',
+        icon: TailwindIcon
+    },
+    JAVASCRIPT: {
+        name: 'JavaScript',
+        icon: JavaScriptIcon
+    },
+    TYPESCRIPT: {
+        name: 'TypeScript',
+        icon: TypescriptIcon
+    },
+    WORDPRESS: {
+        name: 'Wordpress',
+        icon: WordPressIcon
+    }
+}
+
+const PROJECTS = [
+    {
+        title: 'Iglesia Bautista Dios Proveera Blog',
+        description: 'Iglesia Bautista Dios Proveera local church website with a blog focus.',
+        link: 'https://iglesiadiosproveera.com',
+        github: '',
+        image: '/projects/diosproveera.webp',
+        tags:[TAGS.ASTRO,TAGS.TAILWIND]
+    },
+    {
+        title: 'Weather Forecast',
+        description: 'A minimalist weather forecast consuming the OpenWeatherAPI. Displays a loading skeleton and handles errors.',
+        link: 'https://alvarado08.github.io/weather-app/',
+        github: 'https://github.com/Alvarado08/weather-app',
+        image: '/projects/weather.webp',
+        tags:[TAGS.TYPESCRIPT,TAGS.TAILWIND]
+    },
+    {
+        title: 'Library App',
+        description: 'A digital bookshelf that can create and delete a book as well as update its reading status.',
+        link: 'https://alvarado08.github.io/library/',
+        github: 'https://github.com/Alvarado08/library',
+        image: '/projects/library.webp',
+        tags:[TAGS.JAVASCRIPT,TAGS.TAILWIND]
+    },
+    {
+        title: 'Rayados Waller Academy Website',
+        description: 'Rayados Waller Academy local soccer league website that serves as a central hub for league information and offers online player registrations.',
+        link: 'https://rayadoswaller.org',
+        github: '',
+        image: '/projects/rayadoswaller.webp',
+        tags:[TAGS.WORDPRESS]
+    }
+]
+---
+
+<!-- {
+    PROJECTS.map(({title,description,link,github,image,tags}) => (
+        <article class="space-y-3">
+            <h3 class="text-xl md:text-2xl font-semibold">{title}</h3>
+            <p class="text-lg md:text-xl text-pretty">{description}</p>
+            <p class="flex items-center gap-x-3">
+                {link !== '' && <a class="inline-flex items-center gap-x-1 font-semibold text-red-500/90 text-lg" href={link} target="_blank" rel="noopener noreferrer">
+                    Live
+                    <LiveSiteIcon class="size-6 text-black"/>
+                    </a> 
+                }
+                {github !== '' && <a class="inline-flex items-center gap-x-1 font-semibold text-blue-600/80 text-lg" href={github} target="_blank" rel="noopener noreferrer">
+                    Code
+                    <GitHubIcon class="size-6 text-black"/>
+                    </a> 
+                }
+            </p>
+            <ul class="flex items-center gap-3 flex-wrap">
+                {tags.map(tag => (
+                    <li class="flex items-center gap-x-2">
+                        <tag.icon class="size-6"/>
+                        {tag.name}
+                    </li>
+                ))}
+            </ul>
+            <img class="rounded shadow-md projects w-full" src={image} alt={`Preview for ${title}`}>
+        </article>
+    ))
+} -->
