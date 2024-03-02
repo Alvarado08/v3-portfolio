@@ -64,8 +64,80 @@ const PROJECTS = [
         tags:[TAGS.WORDPRESS]
     }
 ]
----
 
+const PROJECTS2 = [
+    {
+        title: 'Iglesia Bautista Dios Proveera Blog',
+        description: 'Iglesia Bautista Dios Proveera local church website with a blog focus.',
+        link: 'https://iglesiadiosproveera.com',
+        github: '',
+        image: '/projects/diosproveera.webp',
+        tab: ['featured','freelance'],
+        tags:[TAGS.ASTRO,TAGS.TAILWIND]
+    },
+    {
+        title: 'Weather Forecast',
+        description: 'A minimalist weather forecast consuming the OpenWeatherAPI. Displays a loading skeleton and handles errors.',
+        link: 'https://alvarado08.github.io/weather-app/',
+        github: 'https://github.com/Alvarado08/weather-app',
+        image: '/projects/weather.webp',
+        tab: ['featured'],
+        tags:[TAGS.TYPESCRIPT,TAGS.TAILWIND]
+    },
+    {
+        title: 'Library App',
+        description: 'A digital bookshelf that can create and delete a book as well as update its reading status.',
+        link: 'https://alvarado08.github.io/library/',
+        github: 'https://github.com/Alvarado08/library',
+        image: '/projects/library.webp',
+        tab: ['featured','personal'],
+        tags:[TAGS.JAVASCRIPT,TAGS.TAILWIND]
+    },
+    {
+        title: 'Rayados Waller Academy Website',
+        description: 'Rayados Waller Academy local soccer league website that serves as a central hub for league information and offers online player registrations.',
+        link: 'https://rayadoswaller.org',
+        github: '',
+        image: '/projects/rayadoswaller.webp',
+        tab: ['freelance'],
+        tags:[TAGS.WORDPRESS]
+    }
+]
+
+const featuredProjects = PROJECTS2.filter(({tab}) => tab.includes('featured'));
+const freelanceProjects = PROJECTS2.filter(({tab}) => tab.includes('freelance'));
+const personalProjects = PROJECTS2.filter(({tab}) => tab.includes('personal'));
+
+const {"x-text": title} = Astro.props;
+---
+<div x-data=`{ featuredProjects: ${JSON.stringify(featuredProjects)}, freelanceProjects: ${JSON.stringify(freelanceProjects)}, personalProjects: ${JSON.stringify(personalProjects)}, activeClasses: 'font-bold', inactiveClasses: 'font-light', activeTab: 1}`>
+    <div class="flex items-center gap-5 text-xl lg:text-2xl">
+        <h4 @click="activeTab = 1" :class="activeTab === 1 ? activeClasses : inactiveClasses" class="hover:cursor-pointer">Featured</h4>
+        <h4 @click="activeTab = 2" :class="activeTab === 2 ? activeClasses : inactiveClasses" class="hover:cursor-pointer">Freelance</h4>
+        <h4 @click="activeTab = 3" :class="activeTab === 3 ? activeClasses : inactiveClasses" class="hover:cursor-pointer">Personal</h4>
+    </div>
+    <div x-show="activeTab === 1" x-transition:enter.duration.500ms x-transition:leave.duration.200ms x-cloak>
+        <template x-for="project in featuredProjects" :key="project.title">
+            <h3 class="text-xl md:text-2xl font-semibold" x-text="project.title"></h3>
+            <p class="text-lg md:text-xl text-pretty" x-text="project.description"></p>
+            <a :href="project.link" :target="_blank" :rel="noopener noreferrer">Live</a>
+        </template>
+    </div>
+    <div x-show="activeTab === 2" x-transition:enter.duration.500ms x-transition:leave.duration.200ms x-cloak>
+        <template x-for="project in freelanceProjects" :key="project.title">
+            <h3 class="text-xl md:text-2xl font-semibold" x-text="project.title"></h3>
+            <p class="text-lg md:text-xl text-pretty" x-text="project.description"></p>
+            <a :href="project.link" :target="_blank" :rel="noopener noreferrer">Live</a>
+        </template>
+    </div>
+    <div x-show="activeTab === 3" x-transition:enter.duration.500ms x-transition:leave.duration.200ms x-cloak>
+        <template x-for="project in personalProjects" :key="project.title">
+            <h3 class="text-xl md:text-2xl font-semibold" x-text="project.title"></h3>
+            <p class="text-lg md:text-xl text-pretty" x-text="project.description"></p>
+            <a :href="project.link" :target="_blank" :rel="noopener noreferrer">Live</a>
+        </template>
+    </div>
+</div>
 <!-- {
     PROJECTS.map(({title,description,link,github,image,tags}) => (
         <article class="space-y-3">
