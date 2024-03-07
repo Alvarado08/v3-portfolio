@@ -1,72 +1,107 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SocialPill from '../components/SocialPill.astro';
-import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
-import GitHubIcon from '../components/icons/GitHubIcon.astro';
-import MailIcon from '../components/icons/MailIcon.astro';
-import HashNodeIcon from '../components/icons/HashNodeIcon.astro';
-import CodeIcon from '../components/icons/CodeIcon.astro';
-import AboutMeIcon from '../components/icons/AboutMeIcon.astro';
-import SkillsIcon from '../components/icons/SkillsIcon.astro';
-import Projects2 from '../components/Projects2.astro';
-import AboutMeIntro from '../components/AboutMeIntro.astro';
-import ContactForm from '../components/ContactForm.astro';
-import AboutMe from '../components/AboutMe.astro';
-import Skills from '../components/Skills.astro';
+import Layout from "../layouts/Layout.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import HashNodeIcon from "../components/icons/HashNodeIcon.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import AboutMeIcon from "../components/icons/AboutMeIcon.astro";
+import SkillsIcon from "../components/icons/SkillsIcon.astro";
+import Projects from "../components/Projects.astro";
+import AboutMeIntro from "../components/AboutMeIntro.astro";
+import ContactForm from "../components/ContactForm.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Skills from "../components/Skills.astro";
 ---
 
-<Layout 
-title="Jorge Alvarado - Web Developer and Programmer"
-description="Jorge Alvarado's portfolio and personal website. Computer Engineer | Front-End Developer | Full-Stack Developer">
-	<main>
-		<section class="w-full mx-auto lg:w-[768px] py-16 sm:py-24 md:py-40 space-y-5 px-8">
-			<img class="max-w-[150px] max-h-[150px] object-cover overflow-hidden rounded-full profile animate--slow animate--profile" src="/profile.webp" alt="Jorge Alvarado photo">
-			<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold intro animate animate--intro">Hey, I'm Jorge Alvarado</h1>
-			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-				<AboutMeIntro/>
-			</h2>
-			<nav class="socialPills animate animate--pill-1 flex gap-3 flex-wrap">
-				<SocialPill title="LinkedIn" aria-label="LinkedIn Profile" href="https://linkedin.com/in/jorgep-alvarado">
-					<LinkedInIcon class="size-4 md:size-6"/>
-					LinkedIn
-				</SocialPill>
-				<SocialPill title="Github" aria-label="Github Profile" href="https://github.com/alvarado08">
-					<GitHubIcon class="size-4 md:size-6"/>
-					GitHub
-				</SocialPill>
-				<SocialPill title="Hashnode" aria-label="Hashnode Blog" href="https://jalvarado.hashnode.dev">
-					<HashNodeIcon class="size-4 md:size-6"/>
-					Hashnode
-				</SocialPill>
-			</nav>
-		</section>
-		<section id="about" class="w-full mx-auto lg:w-[768px] py-40 space-y-7 px-8">
-			<h2 class="text-2xl lg:text-3xl flex items-center gap-x-3 font-bold">
-				<AboutMeIcon class="size-6"/>
-				About Me
-			</h2>
-			<AboutMe/>
-		</section>
-		<section id="skills" class="w-full mx-auto lg:w-[768px] py-40 space-y-7 px-8">
-			<h2 class="text-2xl lg:text-3xl flex items-center gap-x-3 font-bold">
-				<SkillsIcon class="size-6"/>
-				Skills
-			</h2>
-			<Skills/>
-		</section>
-		<section id="projects" class="w-full mx-auto lg:w-[768px] py-40 space-y-7 px-8">
-			<h2 class="text-2xl lg:text-3xl flex items-center gap-x-3 font-bold">
-				<CodeIcon class="size-6"/>
-				Projects
-			</h2>
-			<Projects2/>
-		</section>
-		<section id="contact" class="w-full mx-auto lg:w-[768px] py-40 space-y-7 px-8">
-			<h2 class="text-2xl lg:text-3xl flex items-center gap-x-3 font-bold">
-				<MailIcon class="size-6"/>
-				Contact Me
-			</h2>
-			<ContactForm/>
-		</section>
-	</main>
+<Layout
+  title="Jorge Alvarado - Web Developer and Programmer"
+  description="Jorge Alvarado's portfolio and personal website. Computer Engineer | Front-End Developer | Full-Stack Developer"
+>
+  <main>
+    <section
+      class="w-full mx-auto lg:w-[768px] py-16 sm:py-24 md:py-40 space-y-5 px-8"
+    >
+      <img
+        class="max-w-[150px] max-h-[150px] object-cover overflow-hidden rounded-full profile animate--slow animate--profile"
+        src="/profile.webp"
+        alt="Jorge Alvarado photo"
+      />
+      <h1
+        class="text-3xl md:text-4xl lg:text-5xl font-bold intro animate animate--intro"
+      >
+        Hey, I'm Jorge Alvarado
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <AboutMeIntro />
+      </h2>
+      <nav class="socialPills animate animate--pill-1 flex gap-3 flex-wrap">
+        <SocialPill
+          title="LinkedIn"
+          aria-label="LinkedIn Profile"
+          href="https://linkedin.com/in/jorgep-alvarado"
+        >
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill
+          title="Github"
+          aria-label="Github Profile"
+          href="https://github.com/alvarado08"
+        >
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill
+          title="Hashnode"
+          aria-label="Hashnode Blog"
+          href="https://jalvarado.hashnode.dev"
+        >
+          <HashNodeIcon class="size-4 md:size-6" />
+          Hashnode
+        </SocialPill>
+      </nav>
+    </section>
+    <section
+      id="about"
+      class="w-full mx-auto lg:w-[768px] py-40 space-y-7 px-8"
+    >
+      <h2 class="text-2xl lg:text-3xl flex items-center gap-x-3 font-bold">
+        <AboutMeIcon class="size-6" />
+        About Me
+      </h2>
+      <AboutMe />
+    </section>
+    <section
+      id="skills"
+      class="w-full mx-auto lg:w-[768px] py-40 space-y-7 px-8"
+    >
+      <h2 class="text-2xl lg:text-3xl flex items-center gap-x-3 font-bold">
+        <SkillsIcon class="size-6" />
+        Skills
+      </h2>
+      <Skills />
+    </section>
+    <section
+      id="projects"
+      class="w-full mx-auto lg:w-[768px] py-40 space-y-7 px-8"
+    >
+      <h2 class="text-2xl lg:text-3xl flex items-center gap-x-3 font-bold">
+        <CodeIcon class="size-6" />
+        Projects
+      </h2>
+      <Projects />
+    </section>
+    <section
+      id="contact"
+      class="w-full mx-auto lg:w-[768px] py-40 space-y-7 px-8"
+    >
+      <h2 class="text-2xl lg:text-3xl flex items-center gap-x-3 font-bold">
+        <MailIcon class="size-6" />
+        Contact Me
+      </h2>
+      <ContactForm />
+    </section>
+  </main>
 </Layout>

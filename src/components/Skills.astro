@@ -1,60 +1,67 @@
 ---
-import HtmlIcon from '../components/icons/tools/HtmlIcon.astro';
-import CssIcon from '../components/icons/tools/CssIcon.astro';
-import BootstrapIcon from '../components/icons/tools/BootstrapIcon.astro';
-import TailwindIcon from '../components/icons/tools/TailwindIcon.astro';
-import JavaScriptIcon from '../components/icons/tools/JavaScriptIcon.astro';
-import TypeScriptIcon from './icons/tools/TypeScriptIcon.astro';
-import AstroIcon from '../components/icons/tools/AstroIcon.astro';
-import PhpIcon from '../components/icons/tools/PhpIcon.astro';
-import LaravelIcon from '../components/icons/tools/LaravelIcon.astro';
-import MySqlIcon from '../components/icons/tools/MySqlIcon.astro';
-import SqLiteIcon from '../components/icons/tools/SqLiteIcon.astro';
-import GitIcon from '../components/icons/tools/GitIcon.astro';
-import GitHubIcon from '../components/icons/GitHubIcon.astro';
-import GitLabIcon from '../components/icons/tools/GitLabIcon.astro';
-import WordPressIcon from '../components/icons/tools/WordPressIcon.astro';
-import FigmaIcon from '../components/icons/tools/FigmaIcon.astro';
-import TypescriptIcon from './icons/tools/TypeScriptIcon.astro';
+import HtmlIcon from "../components/icons/tools/HtmlIcon.astro";
+import CssIcon from "../components/icons/tools/CssIcon.astro";
+import BootstrapIcon from "../components/icons/tools/BootstrapIcon.astro";
+import TailwindIcon from "../components/icons/tools/TailwindIcon.astro";
+import JavaScriptIcon from "../components/icons/tools/JavaScriptIcon.astro";
+import TypeScriptIcon from "./icons/tools/TypeScriptIcon.astro";
+import AstroIcon from "../components/icons/tools/AstroIcon.astro";
+import ReactIcon from "../components/icons/tools/ReactIcon.astro";
+import PhpIcon from "../components/icons/tools/PhpIcon.astro";
+import LaravelIcon from "../components/icons/tools/LaravelIcon.astro";
+import MySqlIcon from "../components/icons/tools/MySqlIcon.astro";
+import SqLiteIcon from "../components/icons/tools/SqLiteIcon.astro";
+import GitIcon from "../components/icons/tools/GitIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import GitLabIcon from "../components/icons/tools/GitLabIcon.astro";
+import WordPressIcon from "../components/icons/tools/WordPressIcon.astro";
+import FigmaIcon from "../components/icons/tools/FigmaIcon.astro";
+import JestIcon from "./icons/tools/JestIcon.astro";
 
 const SKILLS = [
-    {
-        name: 'Front-End',
-        tech: [
-            HtmlIcon, CssIcon, BootstrapIcon, TailwindIcon, JavaScriptIcon, TypescriptIcon, AstroIcon
-        ]
-    },
-    {
-        name: 'Back-End',
-        tech: [
-            PhpIcon, LaravelIcon
-        ]
-    },
-    {
-        name: 'Database',
-        tech: [
-            MySqlIcon, SqLiteIcon
-        ]
-    },
-    {
-        name: 'Tools',
-        tech: [
-            GitIcon, GitHubIcon, GitLabIcon, FigmaIcon, WordPressIcon
-        ]
-    },
-]
+  {
+    name: "Front-End",
+    tech: [
+      HtmlIcon,
+      CssIcon,
+      BootstrapIcon,
+      TailwindIcon,
+      JavaScriptIcon,
+      TypeScriptIcon,
+      AstroIcon,
+      ReactIcon,
+    ],
+  },
+  {
+    name: "Back-End",
+    tech: [PhpIcon, LaravelIcon],
+  },
+  {
+    name: "Database",
+    tech: [MySqlIcon, SqLiteIcon],
+  },
+  {
+    name: "Tools",
+    tech: [GitIcon, GitHubIcon, GitLabIcon, FigmaIcon, WordPressIcon],
+  },
+  {
+    name: "Testing",
+    tech: [JestIcon],
+  },
+];
 ---
+
 {
-    SKILLS.map(({name,tech}) => (
-        <div>
-            <h3 class="text-lg font-semibold mb-3">{name}</h3>
-            <ul class="flex items-center gap-5 flex-wrap">
-                {tech.map(Tool => (
-                    <li>
-                        <Tool class="size-12 sm:size-14"/>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    ))
+  SKILLS.map(({ name, tech }) => (
+    <div>
+      <h3 class="text-lg font-semibold mb-3">{name}</h3>
+      <ul class="flex items-center gap-5 flex-wrap">
+        {tech.map((Tool) => (
+          <li>
+            <Tool class="size-12 sm:size-14" />
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))
 }
