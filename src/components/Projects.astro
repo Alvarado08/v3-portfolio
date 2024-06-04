@@ -6,6 +6,7 @@ import TypescriptIcon from "./icons/tools/TypeScriptIcon.astro";
 import WordPressIcon from "./icons/tools/WordPressIcon.astro";
 import LiveSiteIcon from "./icons/LiveSiteIcon.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
+import JQuery from "./icons/tools/JQuery.astro";
 
 const TAGS = {
   ASTRO: {
@@ -28,6 +29,10 @@ const TAGS = {
     name: "Wordpress",
     icon: WordPressIcon,
   },
+  JQUERY: {
+    name: "JQuery",
+    icon: JQuery,
+  },
 };
 
 const PROJECTS = [
@@ -45,7 +50,7 @@ const PROJECTS = [
   {
     title: "Weather Forecast",
     description:
-      "A minimalist weather forecast consuming WeatherAPI. Displays a loading skeleton and handles server errors.",
+      "A minimalistic weather forecast consuming OpenWeatherAPI. Displays a loading skeleton and handles server errors.",
     link: "https://alvarado08.github.io/weather-app/",
     github: "https://github.com/Alvarado08/weather-app",
     image: "/projects/weather.webp",
@@ -60,9 +65,9 @@ const PROJECTS = [
     link: "https://alvarado08.github.io/library/",
     github: "https://github.com/Alvarado08/library",
     image: "/projects/library.webp",
-    tab: ["featured", "personal"],
+    tab: ["personal"],
     tags: [TAGS.JAVASCRIPT, TAGS.TAILWIND],
-    priority: 3,
+    priority: 4,
   },
   {
     title: "Rayados Waller Academy Website",
@@ -74,6 +79,17 @@ const PROJECTS = [
     tab: ["freelance"],
     tags: [TAGS.WORDPRESS],
     priority: 4,
+  },
+  {
+    title: "Terminal Portfolio",
+    description:
+      "Everything you expect a personal portfolio to have, except terminal flavored. Includes autocomplete, default commands for navigation and interactions as well as consuming JokesAPI.",
+    link: "https://alvarado08.github.io/terminal-portfolio/",
+    github: "https://github.com/Alvarado08/terminal-portfolio",
+    image: "/projects/terminal-portfolio.webp",
+    tab: ["featured", "personal"],
+    tags: [TAGS.JQUERY, TAGS.JAVASCRIPT],
+    priority: 3,
   },
 ];
 
@@ -136,7 +152,7 @@ const personalProjects = PROJECTS.filter(({ tab }) =>
                   rel="noopener noreferrer"
                 >
                   Live
-                  <LiveSiteIcon class="size-6 text-black" />
+                  <LiveSiteIcon class="size-7 text-black" />
                 </a>
               )}
               {github !== "" && (
@@ -147,14 +163,14 @@ const personalProjects = PROJECTS.filter(({ tab }) =>
                   rel="noopener noreferrer"
                 >
                   Code
-                  <GitHubIcon class="size-6 text-black" />
+                  <GitHubIcon class="size-7 text-black" />
                 </a>
               )}
             </p>
             <ul class="flex items-center gap-3 flex-wrap">
               {tags.map((tag) => (
                 <li class="flex items-center gap-x-2">
-                  <tag.icon class="size-6" />
+                  <tag.icon class="size-7" />
                   {tag.name}
                 </li>
               ))}
@@ -189,7 +205,7 @@ const personalProjects = PROJECTS.filter(({ tab }) =>
                   rel="noopener noreferrer"
                 >
                   Live
-                  <LiveSiteIcon class="size-6 text-black" />
+                  <LiveSiteIcon class="size-7 text-black" />
                 </a>
               )}
               {github !== "" && (
@@ -200,14 +216,14 @@ const personalProjects = PROJECTS.filter(({ tab }) =>
                   rel="noopener noreferrer"
                 >
                   Code
-                  <GitHubIcon class="size-6 text-black" />
+                  <GitHubIcon class="size-7 text-black" />
                 </a>
               )}
             </p>
             <ul class="flex items-center gap-3 flex-wrap">
               {tags.map((tag) => (
                 <li class="flex items-center gap-x-2">
-                  <tag.icon class="size-6" />
+                  <tag.icon class="size-7" />
                   {tag.name}
                 </li>
               ))}
@@ -242,7 +258,7 @@ const personalProjects = PROJECTS.filter(({ tab }) =>
                   rel="noopener noreferrer"
                 >
                   Live
-                  <LiveSiteIcon class="size-6 text-black" />
+                  <LiveSiteIcon class="size-7 text-black" />
                 </a>
               )}
               {github !== "" && (
@@ -253,14 +269,14 @@ const personalProjects = PROJECTS.filter(({ tab }) =>
                   rel="noopener noreferrer"
                 >
                   Code
-                  <GitHubIcon class="size-6 text-black" />
+                  <GitHubIcon class="size-7 text-black" />
                 </a>
               )}
             </p>
             <ul class="flex items-center gap-3 flex-wrap">
               {tags.map((tag) => (
                 <li class="flex items-center gap-x-2">
-                  <tag.icon class="size-6" />
+                  <tag.icon class="size-7" />
                   {tag.name}
                 </li>
               ))}
