@@ -1,12 +1,12 @@
 ---
 import "@fontsource/onest";
 import "@fontsource/onest/600.css";
-import Header from '../components/Header.astro';
-import Footer from "../components/Footer.astro";
+import Header from "../components/sections/Header.astro";
+import Footer from "../components/sections/Footer.astro";
 
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
@@ -14,141 +14,158 @@ const { title, description } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta property="og:title" content="Jorge Alvarado - Web Developer and Programmer"/>
-		<meta property="og:description" content="Jorge Alvarado's portfolio and personal website. Computer Engineer | Front-End Developer | Full-Stack Developer"/>
-		<meta property="og:url" content="https://jalvarado.netlify.app/"/>
-		<meta property="og:image" content="https://raw.githubusercontent.com/Alvarado08/v3-portfolio/main/public/brand.png"/>
-		<meta name="twitter:card" content="summary_large_image">
-		<meta property="twitter:domain" content="jalvarado.netlify.app">
-		<meta property="twitter:url" content="https://jalvarado.netlify.app">
-		<meta name="twitter:title" content="Jorge Alvarado - Web Developer and Programmer">
-		<meta name="twitter:description" content="Jorge Alvarado's portfolio and personal website. Computer Engineer | Front-End Developer | Full-Stack Developer">
-		<meta name="twitter:image" content="https://raw.githubusercontent.com/Alvarado08/v3-portfolio/main/public/brand.png">
-		<link rel="icon" type="image/x-icon" href="/brand.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="relative">
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
-		<Header/>
-		<slot />
-		<Footer/>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Jorge Alvarado - Software Developer" />
+    <meta
+      property="og:description"
+      content="Jorge Alvarado's portfolio and personal website. Computer Engineer | Software Developer"
+    />
+    <meta property="og:url" content="https://jalvarado.netlify.app/" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/Alvarado08/v3-portfolio/main/public/brand.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="jalvarado.netlify.app" />
+    <meta property="twitter:url" content="https://jalvarado.netlify.app" />
+    <meta name="twitter:title" content="Jorge Alvarado - Software Developer" />
+    <meta
+      name="twitter:description"
+      content="Jorge Alvarado's portfolio and personal website. Computer Engineer | Software Developer"
+    />
+    <meta
+      name="twitter:image"
+      content="https://raw.githubusercontent.com/Alvarado08/v3-portfolio/main/public/brand.png"
+    />
+    <link rel="icon" type="image/x-icon" href="/brand.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="relative">
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"
+    >
+    </div>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
 </html>
 <style is:global>
-	:root {
-	}
-	[x-cloak] { display: none; }
-	html {
-		font-family: 'Onest', sans-serif;
-		scroll-behavior: smooth;
-	}
-	body{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	/* Utility Classes */
-	.animate {
-		animation-duration: 1s;
-		animation-fill-mode: both;
-	}
-	.animate--fast{
-		animation-duration: 0.9s;
-		animation-fill-mode: both;
-	}
-	.animate--slow{
-		animation-duration: 1.5s;
-		animation-fill-mode: both;
-	}
-	.animate--slow.animate--profile {
-		animation-delay: 0.5s;
-	}
-	.animate.animate--intro {
-		animation-delay: 1s;
-	}
-	.animate--fast.animate--me-1 {
-		animation-delay: 1.3s;
-	}
-	.animate--fast.animate--me-2 {
-		animation-delay: 1.5s;
-	}
-	.animate--fast.animate--me-3 {
-		animation-delay: 1.7s;
-	}
-	.animate--fast.animate--me-4 {
-		animation-delay: 1.9s;
-	}
-	.animate.animate--pill-1 {
-		animation-delay: 2s;
-	}
-	/* Animations */
-	@keyframes projectShow {
-		from {
-			opacity: 0;
-			scale: 25%;
-			-webkit-transform: scale(0.25);
-		}
-		to {
-			opacity: 1;
-			scale: 100%;
-			-webkit-transform: scale(1);
-		}
-	}
-	@keyframes showProfile {
-		0% {
-			opacity: 0;
-		}
-		50% {
-			opacity: 0.5;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
-	@keyframes showMe {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-	@keyframes slideInRight {
-		from {
-			opacity: 0;
-			transform: translateX(300px);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
-	@keyframes slideUp {
-		from {
-			opacity: 0;
-			transform: translateY(100px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-	#dropdown {
-		right: 30px;
-	}
-	.profile {
-		animation-name: showProfile;
-		animation-timing-function: ease-in;
-	}
-	.intro {
-		animation-name: slideInRight;
-		animation-timing-function: ease-in;
-		/* 
+  :root {
+  }
+  [x-cloak] {
+    display: none;
+  }
+  html {
+    font-family: "Onest", sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* Utility Classes */
+  .animate {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  .animate--fast {
+    animation-duration: 0.9s;
+    animation-fill-mode: both;
+  }
+  .animate--slow {
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+  }
+  .animate--slow.animate--profile {
+    animation-delay: 0.5s;
+  }
+  .animate.animate--intro {
+    animation-delay: 1s;
+  }
+  .animate--fast.animate--me-1 {
+    animation-delay: 1.3s;
+  }
+  .animate--fast.animate--me-2 {
+    animation-delay: 1.5s;
+  }
+  .animate--fast.animate--me-3 {
+    animation-delay: 1.7s;
+  }
+  .animate--fast.animate--me-4 {
+    animation-delay: 1.9s;
+  }
+  .animate.animate--pill-1 {
+    animation-delay: 2s;
+  }
+  /* Animations */
+  @keyframes projectShow {
+    from {
+      opacity: 0;
+      scale: 25%;
+      -webkit-transform: scale(0.25);
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+      -webkit-transform: scale(1);
+    }
+  }
+  @keyframes showProfile {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes showMe {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(300px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  #dropdown {
+    right: 30px;
+  }
+  .profile {
+    animation-name: showProfile;
+    animation-timing-function: ease-in;
+  }
+  .intro {
+    animation-name: slideInRight;
+    animation-timing-function: ease-in;
+    /* 
 		animation-name: slideInLeft;
 		Duration to complete 1 lap
 		animation-duration: 1s;
@@ -157,26 +174,26 @@ const { title, description } = Astro.props;
 		animation-iteration-count: 1;
 		animation-direction: normal;
 		animation-fill-mode: none; */
-	}
-	.intro-me {
-		animation-name: showMe;
-		animation-timing-function: ease-in;
-	}
-	.socialPills {
-		animation-name: slideUp;
-		animation-timing-function: ease-in;
-	}
-	.projects {
-		view-timeline-name: --image;
-		view-timeline-axis: block;
-		animation-timeline: --image;
-		animation-name: projectShow;
-		animation-range: entry 25% cover 50%;
-		animation-fill-mode: both;
-	}
-	@media (prefers-reduced-motion: reduce){
-		html {
-			scroll-behavior: auto;
-		}
-	}
+  }
+  .intro-me {
+    animation-name: showMe;
+    animation-timing-function: ease-in;
+  }
+  .socialPills {
+    animation-name: slideUp;
+    animation-timing-function: ease-in;
+  }
+  .projects {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: projectShow;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 </style>

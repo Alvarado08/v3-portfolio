@@ -9,15 +9,22 @@ import CodeIcon from "../components/icons/CodeIcon.astro";
 import AboutMeIcon from "../components/icons/AboutMeIcon.astro";
 import SkillsIcon from "../components/icons/SkillsIcon.astro";
 import Projects from "../components/Projects.astro";
-import AboutMeIntro from "../components/AboutMeIntro.astro";
-import ContactForm from "../components/ContactForm.astro";
-import AboutMe from "../components/AboutMe.astro";
+import AboutMeIntro from "../components/sections/AboutMeIntro.astro";
+import ContactForm from "../components/sections/ContactForm.astro";
+import AboutMe from "../components/sections/AboutMe.astro";
 import Skills from "../components/Skills.astro";
+import AboutMeGallery from "../components/swiper/AboutMeGallery";
+import Section from "../components/Section.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import LatestNewsIcon from "../components/icons/LatestNewsIcon.astro";
+import LatestNewsCards from "../components/swiper/LatestNewsCards";
+import HandClick from "../components/HandClick.astro";
+import HandGrab from "../components/HandGrab.astro";
 ---
 
 <Layout
-  title="Jorge Alvarado - Web Developer and Programmer"
-  description="Jorge Alvarado's portfolio and personal website. Computer Engineer | Front-End Developer | Full-Stack Developer"
+  title="Jorge Alvarado - Software Developer"
+  description="Jorge Alvarado's portfolio and personal website. Computer Engineer | Software Developer"
 >
   <main>
     <section
@@ -65,6 +72,16 @@ import Skills from "../components/Skills.astro";
         </SocialPill>
       </nav>
     </section>
+    <Section>
+      <SectionHeader title="Latest">
+        <LatestNewsIcon class="size-6" />
+      </SectionHeader>
+      <LatestNewsCards client:load />
+      <p class="inline-flex items-center gap-x-2">
+        Click <HandClick class="size-6" /> or swipe <HandGrab class="size-6" /> to
+        see more
+      </p>
+    </Section>
     <section
       id="about"
       class="w-full mx-auto lg:w-[768px] py-40 space-y-7 px-8"
@@ -74,6 +91,10 @@ import Skills from "../components/Skills.astro";
         About Me
       </h2>
       <AboutMe />
+      <AboutMeGallery client:visible />
+      <p class="text-sm font-semibold">
+        A byte-sized gallery of my journey and my cats.
+      </p>
     </section>
     <section
       id="skills"
