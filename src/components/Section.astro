@@ -1,7 +1,15 @@
 ---
-const { id = "#" } = Astro.props;
+const {
+  id = "#",
+  paddingDefault = "py-40",
+  paddingYSm = "",
+  paddingYMd = "",
+} = Astro.props;
 ---
 
-<section id={id} class="w-full mx-auto lg:w-[768px] py-40 space-y-7 px-8">
+<section
+  id={id}
+  class=`w-full lg:mx-auto lg:w-[768px] ${paddingDefault} ${paddingYSm} ${paddingYMd} space-y-7 px-8`
+>
   <slot />
 </section>

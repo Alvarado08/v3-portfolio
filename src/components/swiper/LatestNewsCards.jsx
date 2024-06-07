@@ -27,12 +27,8 @@ export default function LatestNewsCards() {
             />
           </a>
         </SwiperSlide>
-        <SwiperSlide className="w-full h-full bg-blue-500">Slide 2</SwiperSlide>
-        <SwiperSlide className="w-full h-full bg-yellow-500">
-          Slide 3
-        </SwiperSlide>
-        <SwiperSlide className="w-full h-full bg-purple-500">
-          Slide 4
+        <SwiperSlide className="w-full h-full bg-black text-white rounded p-4 text-xl">
+          Coming Soon...
         </SwiperSlide>
       </Swiper>
     </div>

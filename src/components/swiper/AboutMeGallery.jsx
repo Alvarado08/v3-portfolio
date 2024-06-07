@@ -23,6 +23,13 @@ export default function AboutMeGallery() {
           />
         </SwiperSlide>
         <SwiperSlide>
+          <img
+            className="w-full h-full object-cover"
+            src="/about-me/classroom.webp"
+            alt="Jorge teaching"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
           <Swiper
             className="w-full h-full overflow-hidden rounded"
             direction={"vertical"}
@@ -70,6 +77,13 @@ export default function AboutMeGallery() {
                 className="w-full h-full object-cover"
                 src="/about-me/pet-cats.webp"
                 alt="Jorge's cats"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img
+                className="w-full h-full object-cover"
+                src="/about-me/tapeta.webp"
+                alt="Cat selfie"
               />
             </SwiperSlide>
           </Swiper>

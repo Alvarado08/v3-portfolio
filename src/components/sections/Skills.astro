@@ -1,0 +1,78 @@
+---
+import HtmlIcon from "../icons/tools/HtmlIcon.astro";
+import CssIcon from "../icons/tools/CssIcon.astro";
+import BootstrapIcon from "../icons/tools/BootstrapIcon.astro";
+import TailwindIcon from "../icons/tools/TailwindIcon.astro";
+import JavaScriptIcon from "../icons/tools/JavaScriptIcon.astro";
+import TypeScriptIcon from "../icons/tools/TypeScriptIcon.astro";
+import AstroIcon from "../icons/tools/AstroIcon.astro";
+import ReactIcon from "../icons/tools/ReactIcon.astro";
+import PhpIcon from "../icons/tools/PhpIcon.astro";
+import LaravelIcon from "../icons/tools/LaravelIcon.astro";
+import MySqlIcon from "../icons/tools/MySqlIcon.astro";
+import SqLiteIcon from "../icons/tools/SqLiteIcon.astro";
+import GitIcon from "../icons/tools/GitIcon.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import GitLabIcon from "../icons/tools/GitLabIcon.astro";
+import WordPressIcon from "../icons/tools/WordPressIcon.astro";
+import FigmaIcon from "../icons/tools/FigmaIcon.astro";
+import JestIcon from "../icons/tools/JestIcon.astro";
+import JQuery from "../icons/tools/JQuery.astro";
+import PostgreSqlIcon from "../icons/tools/PostgreSqlIcon.astro";
+import SupaBaseIcon from "../icons/tools/SupaBaseIcon.astro";
+
+const SKILLS = [
+  {
+    name: "Front-End",
+    tech: [
+      HtmlIcon,
+      CssIcon,
+      BootstrapIcon,
+      TailwindIcon,
+      JavaScriptIcon,
+      TypeScriptIcon,
+      ReactIcon,
+      AstroIcon,
+      JQuery,
+    ],
+  },
+  {
+    name: "Back-End",
+    tech: [PhpIcon, LaravelIcon],
+  },
+  {
+    name: "Database",
+    tech: [MySqlIcon, SqLiteIcon, PostgreSqlIcon],
+  },
+  {
+    name: "Tools",
+    tech: [
+      GitIcon,
+      GitHubIcon,
+      GitLabIcon,
+      SupaBaseIcon,
+      FigmaIcon,
+      WordPressIcon,
+    ],
+  },
+  {
+    name: "Testing",
+    tech: [JestIcon],
+  },
+];
+---
+
+{
+  SKILLS.map(({ name, tech }) => (
+    <div>
+      <h3 class="text-lg font-semibold mb-3">{name}</h3>
+      <ul class="flex items-center gap-5 flex-wrap">
+        {tech.map((Tool) => (
+          <li>
+            <Tool class="size-12 sm:size-14" />
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))
+}
