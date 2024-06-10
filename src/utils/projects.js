@@ -105,7 +105,7 @@ export const PROJECTS = [
   {
     title: "Supa Smoothies",
     description:
-      "Blend your way to a healthier you with Supa Smoothies! Web Application to create, manage, update and delete smoothies. Uses Supabase as the BaaS.",
+      "Blend your way to a healthier you with Supa Smoothies! Web app to create, manage, filter, edit and delete smoothies.",
     link: "https://alvarado08.github.io/supa-smoothies/",
     github: "https://github.com/Alvarado08/supa-smoothies",
     image: "/projects/supa-smoothies.webp",
