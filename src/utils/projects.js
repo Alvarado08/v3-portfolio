@@ -56,18 +56,18 @@ export const PROJECTS = [
     image: "/projects/diosproveera.webp",
     tab: ["featured", "freelance"],
     tags: [TAGS.ASTRO, TAGS.TAILWIND],
-    priority: 2,
+    priority: 3,
   },
   {
     title: "Weather Forecast",
     description:
-      "A minimalistic weather forecast consuming OpenWeatherAPI. Displays a loading skeleton and handles server errors.",
+      "A minimalistic weather forecast consuming the WeatherAPI. Displays a loading skeleton and handles server errors.",
     link: "https://alvarado08.github.io/weather-app/",
     github: "https://github.com/Alvarado08/weather-app",
     image: "/projects/weather.webp",
     tab: ["personal"],
     tags: [TAGS.TYPESCRIPT, TAGS.TAILWIND],
-    priority: 2,
+    priority: 3,
   },
   {
     title: "Library App",
@@ -78,7 +78,7 @@ export const PROJECTS = [
     image: "/projects/library.webp",
     tab: ["personal"],
     tags: [TAGS.JAVASCRIPT, TAGS.TAILWIND],
-    priority: 4,
+    priority: 5,
   },
   {
     title: "Rayados Waller Academy Website",
@@ -94,13 +94,13 @@ export const PROJECTS = [
   {
     title: "Terminal Portfolio",
     description:
-      "Everything you expect a personal portfolio to have, except terminal flavored. Includes autocomplete, default commands for navigation and interactions and consumes JokesAPI.",
+      "Everything you expect a personal portfolio to have, except terminal flavored. Includes autocomplete, default commands for navigation and interactions and consumes the JokesAPI.",
     link: "https://alvarado08.github.io/terminal-portfolio/",
     github: "https://github.com/Alvarado08/terminal-portfolio",
     image: "/projects/terminal-portfolio.webp",
     tab: ["featured", "personal"],
     tags: [TAGS.JQUERY, TAGS.JAVASCRIPT],
-    priority: 3,
+    priority: 4,
   },
   {
     title: "Supa Smoothies",
@@ -118,6 +118,16 @@ export const PROJECTS = [
       TAGS.SUPABASE,
     ],
     priority: 1,
+  },
+  {
+    title: "CV Builder",
+    description: "Tailor your resume and export it in PDF format.",
+    link: "https://buildgen-cv.netlify.app",
+    github: "https://github.com/Alvarado08/cv-builder",
+    image: "/projects/cv-builder.webp",
+    tab: ["featured", "personal"],
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+    priority: 2,
   },
 ];
 export const LatestProject = PROJECTS[PROJECTS.length - 1];

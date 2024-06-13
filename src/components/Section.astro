@@ -4,12 +4,13 @@ const {
   paddingDefault = "py-40",
   paddingYSm = "",
   paddingYMd = "",
+  reduceSpaceBetweenMd = false,
 } = Astro.props;
 ---
 
 <section
   id={id}
-  class=`w-full lg:mx-auto lg:w-[768px] ${paddingDefault} ${paddingYSm} ${paddingYMd} space-y-7 px-8`
+  class=`w-full lg:mx-auto lg:w-[768px] ${paddingDefault} ${paddingYSm} ${paddingYMd} ${reduceSpaceBetweenMd ? "space-y-5" : "space-y-7"} md:space-y-7 px-8`
 >
   <slot />
 </section>
