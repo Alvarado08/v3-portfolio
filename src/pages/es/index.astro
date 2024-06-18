@@ -1,30 +1,30 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import SocialPill from "../components/SocialPill.astro";
-import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
-import GitHubIcon from "../components/icons/GitHubIcon.astro";
-import MailIcon from "../components/icons/MailIcon.astro";
-import HashNodeIcon from "../components/icons/HashNodeIcon.astro";
-import CodeIcon from "../components/icons/CodeIcon.astro";
-import AboutMeIcon from "../components/icons/AboutMeIcon.astro";
-import SkillsIcon from "../components/icons/SkillsIcon.astro";
-import Projects from "../components/sections/Projects.astro";
-import AboutMeIntro from "../components/sections/AboutMeIntro.astro";
-import ContactForm from "../components/sections/ContactForm.astro";
-import AboutMe from "../components/sections/AboutMe.astro";
-import Skills from "../components/sections/Skills.astro";
-import AboutMeGallery from "../components/swiper/AboutMeGallery";
-import Section from "../components/Section.astro";
-import SectionHeader from "../components/SectionHeader.astro";
-import LatestNewsIcon from "../components/icons/LatestNewsIcon.astro";
-import LatestNewsCards from "../components/swiper/LatestNewsCards";
-import HandClick from "../components/icons/HandClick.astro";
-import HandGrab from "../components/icons/HandGrab.astro";
+import Layout from "../../layouts/es/Layout.astro";
+import SocialPill from "../../components/SocialPill.astro";
+import LinkedInIcon from "../../components/icons/LinkedInIcon.astro";
+import GitHubIcon from "../../components/icons/GitHubIcon.astro";
+import MailIcon from "../../components/icons/MailIcon.astro";
+import HashNodeIcon from "../../components/icons/HashNodeIcon.astro";
+import CodeIcon from "../../components/icons/CodeIcon.astro";
+import AboutMeIcon from "../../components/icons/AboutMeIcon.astro";
+import SkillsIcon from "../../components/icons/SkillsIcon.astro";
+import Projects from "../../components/sections/es/Projects.astro";
+import AboutMeIntro from "../../components/sections/es/AboutMeIntro.astro";
+import ContactForm from "../../components/sections/es/ContactForm.astro";
+import AboutMe from "../../components/sections/es/AboutMe.astro";
+import Skills from "../../components/sections/es/Skills.astro";
+import AboutMeGallery from "../../components/swiper/AboutMeGallery";
+import Section from "../../components/Section.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import LatestNewsIcon from "../../components/icons/LatestNewsIcon.astro";
+import LatestNewsCards from "../../components/swiper/LatestNewsCards";
+import HandClick from "../../components/icons/HandClick.astro";
+import HandGrab from "../../components/icons/HandGrab.astro";
 ---
 
 <Layout
-  title="Jorge Alvarado - Software Developer"
-  description="Jorge Alvarado's portfolio and personal website. Computer Engineer | Software Developer."
+  title="Jorge Alvarado - Desarrollador de software"
+  description="Jorge Alvarado's portfolio and personal website. Ingeniero en sistemas | Desarrollador de software."
 >
   <main>
     <Section
@@ -43,7 +43,7 @@ import HandGrab from "../components/icons/HandGrab.astro";
       <h1
         class="text-3xl md:text-4xl lg:text-5xl font-bold intro animate animate--intro"
       >
-        Hey, I'm Jorge Alvarado
+        Hola, soy Jorge Alvarado
       </h1>
       <h2 class="text-xl lg:text-2xl text-wrap w-full lg:max-w-[700px]">
         <AboutMeIntro />
@@ -77,43 +77,44 @@ import HandGrab from "../components/icons/HandGrab.astro";
     </Section>
 
     <Section>
-      <SectionHeader title="Latest">
+      <SectionHeader title="Lo más reciente">
         <LatestNewsIcon class="size-6" />
       </SectionHeader>
       <LatestNewsCards client:visible />
       <p class="inline-flex items-center gap-x-2">
-        Click <HandClick class="size-6" /> or swipe <HandGrab class="size-6" /> to
-        see more
+        Haz click <HandClick class="size-6" /> o desliza <HandGrab
+          class="size-6"
+        /> para ver más
       </p>
     </Section>
 
-    <Section id="about">
-      <SectionHeader title="About Me">
+    <Section id="sobremi">
+      <SectionHeader title="Sobre mi">
         <AboutMeIcon class="size-6" />
       </SectionHeader>
       <AboutMe />
       <AboutMeGallery client:visible />
       <p class="text-sm font-semibold">
-        A byte-sized gallery of my journey and my cats.
+        Una pequeña galeria de mi trayectoria y mis gatas.
       </p>
     </Section>
 
-    <Section id="skills">
-      <SectionHeader title="Skills">
+    <Section id="conocimientos">
+      <SectionHeader title="Conocimientos">
         <SkillsIcon class="size-6" />
       </SectionHeader>
       <Skills />
     </Section>
 
-    <Section id="projects">
-      <SectionHeader title="Projects">
+    <Section id="proyectos">
+      <SectionHeader title="Proyectos">
         <CodeIcon class="size-6" />
       </SectionHeader>
       <Projects />
     </Section>
 
-    <Section id="contact">
-      <SectionHeader title="Contact Me">
+    <Section id="contacto">
+      <SectionHeader title="Contacto">
         <MailIcon class="size-6" />
       </SectionHeader>
       <ContactForm />

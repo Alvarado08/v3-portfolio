@@ -1,8 +1,8 @@
 ---
 import "@fontsource/onest";
 import "@fontsource/onest/600.css";
-import NavBar from "../components/sections/NavBar.astro";
-import Footer from "../components/sections/Footer.astro";
+import NavBar from "../../components/sections/es/NavBar.astro";
+import Footer from "../../components/sections/Footer.astro";
 
 interface Props {
   title: string;
@@ -13,15 +13,18 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Jorge Alvarado - Software Developer" />
+    <meta
+      property="og:title"
+      content="Jorge Alvarado - Desarrollador de software"
+    />
     <meta
       property="og:description"
-      content="Jorge Alvarado's portfolio and personal website. Computer Engineer | Software Developer."
+      content="Porfolio y sitio personal de Jorge Alvarado. Ingeniero en sistemas | Desarrollador de software."
     />
     <meta property="og:url" content="https://jpadev.netlify.app/" />
 
@@ -32,10 +35,13 @@ const { title, description } = Astro.props;
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="jpadev.netlify.app" />
     <meta property="twitter:url" content="https://jpadev.netlify.app" />
-    <meta name="twitter:title" content="Jorge Alvarado - Software Developer" />
+    <meta
+      name="twitter:title"
+      content="Jorge Alvarado - Desarrollador de software"
+    />
     <meta
       name="twitter:description"
-      content="Jorge Alvarado's portfolio and personal website. Computer Engineer | Software Developer."
+      content="Porfolio y sitio personal de Jorge Alvarado. Ingeniero en sistemas | Desarrollador de software."
     />
 
     <meta

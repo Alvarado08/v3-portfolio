@@ -1,12 +1,12 @@
-import AstroIcon from "../components/icons/tools/AstroIcon.astro";
-import TailwindIcon from "../components/icons/tools/TailwindIcon.astro";
-import JavaScriptIcon from "../components/icons/tools/JavaScriptIcon.astro";
-import TypescriptIcon from "../components/icons/tools/TypeScriptIcon.astro";
-import WordPressIcon from "../components/icons/tools/WordPressIcon.astro";
-import JQuery from "../components/icons/tools/JQuery.astro";
-import ReactIcon from "../components/icons/tools/ReactIcon.astro";
-import SupaBaseIcon from "../components/icons/tools/SupaBaseIcon.astro";
-import PostgreSqlIcon from "../components/icons/tools/PostgreSqlIcon.astro";
+import AstroIcon from "../../components/icons/tools/AstroIcon.astro";
+import TailwindIcon from "../../components/icons/tools/TailwindIcon.astro";
+import JavaScriptIcon from "../../components/icons/tools/JavaScriptIcon.astro";
+import TypescriptIcon from "../../components/icons/tools/TypeScriptIcon.astro";
+import WordPressIcon from "../../components/icons/tools/WordPressIcon.astro";
+import JQuery from "../../components/icons/tools/JQuery.astro";
+import ReactIcon from "../../components/icons/tools/ReactIcon.astro";
+import SupaBaseIcon from "../../components/icons/tools/SupaBaseIcon.astro";
+import PostgreSqlIcon from "../../components/icons/tools/PostgreSqlIcon.astro";
 
 const TAGS = {
   ASTRO: {
@@ -50,7 +50,7 @@ export const PROJECTS = [
   {
     title: "Iglesia Bautista Dios Proveera Blog",
     description:
-      "Iglesia Bautista Dios Proveera local church blog-focused website.",
+      "Sitio web con enfoque de blog de la Iglesia Bautista Dios Proveera.",
     link: "https://iglesiadiosproveera.com",
     github: "https://github.com/Alvarado08/dios-proveera",
     image: "/projects/diosproveera.webp",
@@ -59,9 +59,9 @@ export const PROJECTS = [
     priority: 3,
   },
   {
-    title: "Weather Forecast",
+    title: "Pronóstico de Clima",
     description:
-      "A minimalistic weather forecast for the next 3 days consuming the WeatherAPI.",
+      "Aplicación web con un tema minimalista que consume la API de OpenWeather para mostrar el pronóstico de los siguientes 3 días de cualquier ciudad del mundo.",
     link: "https://alvarado08.github.io/weather-app/",
     github: "https://github.com/Alvarado08/weather-app",
     image: "/projects/weather.webp",
@@ -70,9 +70,9 @@ export const PROJECTS = [
     priority: 3,
   },
   {
-    title: "Library App",
+    title: "Librero digital",
     description:
-      "A digital bookshelf that can create and delete a book as well as update its reading status.",
+      "Librero digital para crear, gestionar estados de lectura y eliminar libros.",
     link: "https://alvarado08.github.io/library/",
     github: "https://github.com/Alvarado08/library",
     image: "/projects/library.webp",
@@ -81,9 +81,9 @@ export const PROJECTS = [
     priority: 5,
   },
   {
-    title: "Rayados Waller Academy Website",
+    title: "Sitio Web Rayados Waller Academy",
     description:
-      "Rayados Waller Academy local soccer league website that serves as a central hub for league information and offers online player registrations.",
+      "Sitio web de la liga local de fútbol Rayados Waller Academy. Ofrece información general de la liga y registraciones en linea.",
     link: "https://rayadoswaller.org",
     github: "",
     image: "/projects/rayadoswaller.webp",
@@ -92,9 +92,9 @@ export const PROJECTS = [
     priority: 4,
   },
   {
-    title: "Terminal Portfolio",
+    title: "Porfolio de Terminal",
     description:
-      "Everything you expect a personal portfolio to have, except terminal flavored. Offers autocomplete, default commands for navigation and interactions and consumes the JokesAPI.",
+      "Porfolio personal con un tema terminal. Ofrece autocompletado, comandos por defecto para la navegación e interacción y consume la API de JokesAPI.",
     link: "https://alvarado08.github.io/terminal-portfolio/",
     github: "https://github.com/Alvarado08/terminal-portfolio",
     image: "/projects/terminal-portfolio.webp",
@@ -105,7 +105,7 @@ export const PROJECTS = [
   {
     title: "Supa Smoothies",
     description:
-      "Blend your way to a healthier you with Supa Smoothies! Web app to create, manage, filter, edit and delete smoothies.",
+      "¡Mejora tu estilo de vida con Supa Smoothies!. Aplicación web para crear, administrar, filtrar, editar y eliminar smoothies. Utiliza Supabase como el BaaS.",
     link: "https://alvarado08.github.io/supa-smoothies/",
     github: "https://github.com/Alvarado08/supa-smoothies",
     image: "/projects/supa-smoothies.webp",
@@ -120,8 +120,9 @@ export const PROJECTS = [
     priority: 1,
   },
   {
-    title: "CV Builder",
-    description: "Tailor, customize and export your Resume in PDF format.",
+    title: "Creador CV",
+    description:
+      "Crea y personaliza tu Curriculum Vitae con la opción de exportar en formato PDF.",
     link: "https://buildgen-cv.netlify.app",
     github: "https://github.com/Alvarado08/cv-builder",
     image: "/projects/cv-builder.webp",

@@ -1,0 +1,148 @@
+<form id="my-form" action="https://formspree.io/f/xzbnzwzb" method="POST">
+  <div class="mb-5">
+    <label for="name" class="block mb-2 text-gray-900 font-semibold"
+      >Tu nombre</label
+    >
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      placeholder="Juan Doe"
+      required
+      autocomplete="off"
+    />
+  </div>
+  <div class="mb-5">
+    <label for="email" class="block mb-2 text-gray-900 font-semibold"
+      >Tu email</label
+    >
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      placeholder="nombre@ejemplo.com"
+      required
+    />
+  </div>
+  <div class="mb-5">
+    <label for="subject" class="block mb-2 text-gray-900 font-semibold"
+      >Asunto</label
+    >
+    <input
+      type="text"
+      id="subject"
+      name="subject"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      placeholder="Cotización de sitio web"
+      required
+      autocomplete="off"
+    />
+  </div>
+  <div class="mb-5">
+    <label for="message" class="block mb-2 text-gray-900 font-semibold"
+      >Tu mensaje</label
+    >
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+      placeholder="¿Cómo puedo ayudarte?"
+      required></textarea>
+  </div>
+  <button
+    id="submit-button"
+    type="submit"
+    aria-label="Submit form"
+    class="text-white bg-blue-600 hover:bg-blue-600/90 transition ease-in-out delay-100 duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+    >Enviar</button
+  >
+  <p id="my-form-status" class="mt-5 font-semibold"></p>
+</form>
+<script>
+  let form = document.getElementById("my-form") as HTMLFormElement | null;
+  let submitBtn = document.getElementById(
+    "submit-button"
+  ) as HTMLButtonElement | null;
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    let status = document.getElementById("my-form-status");
+    let data = new FormData(event.target);
+    status.classList.add("text-green-600");
+    status.classList.contains("hidden") && status.classList.remove("hidden");
+    submitBtn.disabled = true;
+    submitBtn.classList.add("opacity-90");
+    submitBtn.classList.add("cursor-not-allowed");
+    submitBtn.classList.remove("hover:bg-blue-600/90");
+    status.textContent = "Enviando...";
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove("opacity-90");
+          submitBtn.classList.remove("cursor-not-allowed");
+          submitBtn.classList.add("hover:bg-blue-600/90");
+          status.textContent = "¡Enviado!";
+          form.reset();
+          setTimeout(function () {
+            status.classList.add("hidden");
+            status.classList.remove("text-green-600");
+          }, 5000);
+        } else {
+          response.json().then((data) => {
+            if (Object.hasOwn(data, "errors")) {
+              status.classList.remove("text-green-600");
+              submitBtn.disabled = false;
+              submitBtn.classList.remove("opacity-90");
+              submitBtn.classList.remove("cursor-not-allowed");
+              submitBtn.classList.add("hover:bg-blue-600/90");
+              status.classList.add("text-red-600");
+              status.textContent = data["errors"]
+                .map((error) => error["message"])
+                .join(", ");
+              setTimeout(function () {
+                status.classList.add("hidden");
+                status.classList.remove("text-red-600");
+              }, 5000);
+            } else {
+              status.classList.remove("text-green-600");
+              submitBtn.disabled = false;
+              submitBtn.classList.remove("opacity-90");
+              submitBtn.classList.remove("cursor-not-allowed");
+              submitBtn.classList.add("hover:bg-blue-600/90");
+              status.classList.add("text-red-600");
+              status.textContent =
+                "¡No se pudo enviar tu mensaje! Por favor, intenta de nuevo.";
+              setTimeout(function () {
+                status.classList.add("hidden");
+                status.classList.remove("text-red-600");
+              }, 5000);
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        status.classList.remove("text-green-600");
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-90");
+        submitBtn.classList.remove("cursor-not-allowed");
+        submitBtn.classList.add("hover:bg-blue-600/90");
+        status.classList.add("text-red-600");
+        status.textContent = "¡Algo salió mal! Por favor, intenta de nuevo.";
+        setTimeout(function () {
+          status.classList.add("hidden");
+          status.classList.remove("text-red-600");
+        }, 5000);
+      });
+  }
+  form.addEventListener("submit", handleSubmit);
+</script>

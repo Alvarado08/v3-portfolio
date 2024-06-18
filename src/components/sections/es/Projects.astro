@@ -1,0 +1,211 @@
+---
+import { PROJECTS } from "../../../utils/es/projects";
+
+import LiveSiteIcon from "../../icons/LiveSiteIcon.astro";
+import GitHubIcon from "../../icons/GitHubIcon.astro";
+
+const featuredProjects = PROJECTS.filter(({ tab }) =>
+  tab.includes("featured")
+).sort((a, b) => a.priority - b.priority);
+const freelanceProjects = PROJECTS.filter(({ tab }) =>
+  tab.includes("freelance")
+).sort((a, b) => a.priority - b.priority);
+const personalProjects = PROJECTS.filter(({ tab }) =>
+  tab.includes("personal")
+).sort((a, b) => a.priority - b.priority);
+---
+
+<div
+  x-data="{ activeTab: 1, activeClasses: 'font-bold text-yellow-500/90', inactiveClasses: 'font-light', }"
+>
+  <div class="flex items-center gap-5 text-xl lg:text-2xl mb-6">
+    <h4
+      @click="activeTab = 1"
+      :class="activeTab === 1 ? activeClasses : inactiveClasses"
+      class="hover:cursor-pointer"
+    >
+      Destacados
+    </h4>
+    <h4
+      @click="activeTab = 2"
+      :class="activeTab === 2 ? activeClasses : inactiveClasses"
+      class="hover:cursor-pointer"
+    >
+      Freelance
+    </h4>
+    <h4
+      @click="activeTab = 3"
+      :class="activeTab === 3 ? activeClasses : inactiveClasses"
+      class="hover:cursor-pointer"
+    >
+      Personales
+    </h4>
+  </div>
+  <div>
+    <div class="space-y-10">
+      {
+        featuredProjects.map(
+          ({ title, description, link, github, image, tags }) => (
+            <article
+              x-show="activeTab === 1"
+              x-cloak
+              x-transition:enter.duration.500ms
+              x-transition:leave.duration.200ms
+              class="space-y-3"
+            >
+              <h3 class="text-xl md:text-2xl font-semibold">{title}</h3>
+              <p class="text-lg md:text-xl text-pretty">{description}</p>
+              <p class="flex items-center gap-x-3">
+                {link !== "" && (
+                  <a
+                    class="inline-flex items-center gap-x-1 font-semibold text-red-500/90 text-lg"
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Enlace
+                    <LiveSiteIcon class="size-7 text-black" />
+                  </a>
+                )}
+                {github !== "" && (
+                  <a
+                    class="inline-flex items-center gap-x-1 font-semibold text-blue-600/80 text-lg"
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Código
+                    <GitHubIcon class="size-7 text-black" />
+                  </a>
+                )}
+              </p>
+              <ul class="flex items-center gap-3 flex-wrap">
+                {tags.map((tag) => (
+                  <li class="flex items-center gap-x-2">
+                    <tag.icon class="size-7" />
+                    {tag.name}
+                  </li>
+                ))}
+              </ul>
+              <img
+                class="rounded shadow-md projects w-full"
+                src={image}
+                alt={`Previa vista de ${title}`}
+              />
+            </article>
+          )
+        )
+      }
+    </div>
+    <div class="space-y-10">
+      {
+        freelanceProjects.map(
+          ({ title, description, link, github, image, tags }) => (
+            <article
+              x-show="activeTab === 2"
+              x-cloak
+              x-transition:enter.duration.500ms
+              x-transition:leave.duration.200ms
+              class="space-y-3"
+            >
+              <h3 class="text-xl md:text-2xl font-semibold">{title}</h3>
+              <p class="text-lg md:text-xl text-pretty">{description}</p>
+              <p class="flex items-center gap-x-3">
+                {link !== "" && (
+                  <a
+                    class="inline-flex items-center gap-x-1 font-semibold text-red-500/90 text-lg"
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Enlace
+                    <LiveSiteIcon class="size-7 text-black" />
+                  </a>
+                )}
+                {github !== "" && (
+                  <a
+                    class="inline-flex items-center gap-x-1 font-semibold text-blue-600/80 text-lg"
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Código
+                    <GitHubIcon class="size-7 text-black" />
+                  </a>
+                )}
+              </p>
+              <ul class="flex items-center gap-3 flex-wrap">
+                {tags.map((tag) => (
+                  <li class="flex items-center gap-x-2">
+                    <tag.icon class="size-7" />
+                    {tag.name}
+                  </li>
+                ))}
+              </ul>
+              <img
+                class="rounded shadow-md projects w-full"
+                src={image}
+                alt={`Previa vista de ${title}`}
+              />
+            </article>
+          )
+        )
+      }
+    </div>
+    <div class="space-y-10">
+      {
+        personalProjects.map(
+          ({ title, description, link, github, image, tags }) => (
+            <article
+              x-show="activeTab === 3"
+              x-cloak
+              x-transition:enter.duration.500ms
+              x-transition:leave.duration.200ms
+              class="space-y-3"
+            >
+              <h3 class="text-xl md:text-2xl font-semibold">{title}</h3>
+              <p class="text-lg md:text-xl text-pretty">{description}</p>
+              <p class="flex items-center gap-x-3">
+                {link !== "" && (
+                  <a
+                    class="inline-flex items-center gap-x-1 font-semibold text-red-500/90 text-lg"
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Enlace
+                    <LiveSiteIcon class="size-7 text-black" />
+                  </a>
+                )}
+                {github !== "" && (
+                  <a
+                    class="inline-flex items-center gap-x-1 font-semibold text-blue-600/80 text-lg"
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Código
+                    <GitHubIcon class="size-7 text-black" />
+                  </a>
+                )}
+              </p>
+              <ul class="flex items-center gap-3 flex-wrap">
+                {tags.map((tag) => (
+                  <li class="flex items-center gap-x-2">
+                    <tag.icon class="size-7" />
+                    {tag.name}
+                  </li>
+                ))}
+              </ul>
+              <img
+                class="rounded shadow-md projects w-full"
+                src={image}
+                alt={`Previa vista de ${title}`}
+              />
+            </article>
+          )
+        )
+      }
+    </div>
+  </div>
+</div>

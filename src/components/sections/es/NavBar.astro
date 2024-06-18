@@ -1,0 +1,67 @@
+---
+import MobileMenu from "../../icons/MobileMenu.astro";
+---
+
+<nav
+  class="flex justify-between items-center py-4 px-8 w-full lg:w-[1200px] lg:mx-auto sticky backdrop-blur-sm sm:backdrop-blur-none sm:static top-0 z-10"
+>
+  <a title="Logo de Jorge Alvarado" href="/">
+    <img
+      class="size-12 sm:size-14"
+      src="/brand.png"
+      alt="Logo de Jorge Alvarado"
+    />
+  </a>
+  <div class="hidden sm:flex font-semibold items-center gap-x-5 opacity-80">
+    <a href="#sobremi">Sobre mi</a>
+    <a href="#conocimientos">Conocimientos</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+    <a href="/"
+      ><img
+        class="size-6"
+        src="/en-flag.png"
+        alt="Cambiar idioma a inglés"
+      /></a
+    >
+  </div>
+  <div x-data="{openmenu:false}" class="dropdown inline-block sm:hidden">
+    <label tabindex="0">
+      <button
+        aria-label="Menú de navegación móvil"
+        @click="openmenu = !openmenu;"
+        @click.outside="if(openmenu)openmenu = !openmenu"
+      >
+        <MobileMenu class="size-6" />
+      </button>
+    </label>
+    <ul
+      x-show="openmenu"
+      x-transition
+      tabindex="0"
+      class="menu menu-md dropdown-content mt-3 z-[10] p-2 shadow rounded-box w-40 right-5 bg-base-100"
+    >
+      <li>
+        <a href="#sobremi">Sobre mi</a>
+      </li>
+      <li>
+        <a href="#conocimientos">Conocimientos</a>
+      </li>
+      <li>
+        <a href="#proyectos">Proyectos</a>
+      </li>
+      <li>
+        <a href="#contacto">Contacto</a>
+      </li>
+      <li>
+        <a href="/"
+          ><img
+            class="size-6"
+            src="/en-flag.png"
+            alt="Cambiar idioma a inglés"
+          /></a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -2,7 +2,7 @@
 import MobileMenu from "../icons/MobileMenu.astro";
 ---
 
-<header
+<nav
   class="flex justify-between items-center py-4 px-8 w-full lg:w-[1200px] lg:mx-auto sticky backdrop-blur-sm sm:backdrop-blur-none sm:static top-0 z-10"
 >
   <a title="Jorge Alvarado's Logo" href="/">
@@ -17,6 +17,13 @@ import MobileMenu from "../icons/MobileMenu.astro";
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+    <a href="es/"
+      ><img
+        class="size-6"
+        src="/es-flag.png"
+        alt="Change language to Spanish"
+      /></a
+    >
   </nav>
   <nav x-data="{openmenu:false}" class="dropdown inline-block sm:hidden">
     <label tabindex="0">
@@ -46,6 +53,15 @@ import MobileMenu from "../icons/MobileMenu.astro";
       <li>
         <a href="#contact">Contact</a>
       </li>
+      <li>
+        <a href="es/"
+          ><img
+            class="size-6"
+            src="/es-flag.png"
+            alt="Change language to Spanish"
+          /></a
+        >
+      </li>
     </ul>
   </nav>
-</header>
+</nav>
