@@ -21,4 +21,5 @@ pnpm-debug.log*
 .DS_Store
 
 # misc
-.vscode/
+.vscode/*
+!.vscode/extensions.json
