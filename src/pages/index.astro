@@ -20,13 +20,14 @@ import LatestNewsIcon from "../components/icons/LatestNewsIcon.astro";
 import LatestNewsCards from "../components/swiper/LatestNewsCards";
 import HandClick from "../components/icons/HandClick.astro";
 import HandGrab from "../components/icons/HandGrab.astro";
+import Footer from "../components/sections/Footer.astro";
 ---
 
 <Layout
   title="Jorge Alvarado - Software Developer"
   description="Jorge Alvarado's portfolio and personal website. Computer Engineer | Software Developer."
 >
-  <main>
+  <main class="relative w-full h-screen">
     <Section
       paddingDefault="py-16"
       paddingYSm="sm:py-24"
@@ -118,5 +119,7 @@ import HandGrab from "../components/icons/HandGrab.astro";
       </SectionHeader>
       <ContactForm />
     </Section>
+
+    <Footer />
   </main>
 </Layout>

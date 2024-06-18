@@ -1,11 +1,14 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
 import MobileMenu from "../../icons/MobileMenu.astro";
+const indexURL = getRelativeLocaleUrl("es", "/");
 ---
 
-<nav
+<header
   class="flex justify-between items-center py-4 px-8 w-full lg:w-[1200px] lg:mx-auto sticky backdrop-blur-sm sm:backdrop-blur-none sm:static top-0 z-10"
 >
-  <a title="Logo de Jorge Alvarado" href="/">
+  <a title="Logo de Jorge Alvarado" href={indexURL}>
     <img
       class="size-12 sm:size-14"
       src="/brand.png"
@@ -64,4 +67,4 @@ import MobileMenu from "../../icons/MobileMenu.astro";
       </li>
     </ul>
   </div>
-</nav>
+</header>
