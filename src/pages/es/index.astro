@@ -21,106 +21,113 @@ import LatestNewsCards from "../../components/swiper/LatestNewsCards";
 import HandClick from "../../components/icons/HandClick.astro";
 import HandGrab from "../../components/icons/HandGrab.astro";
 import Footer from "../../components/sections/Footer.astro";
+import NavBar from "../../components/sections/es/NavBar.astro";
 ---
 
 <Layout
   title="Jorge Alvarado - Desarrollador de software"
   description="Jorge Alvarado's portfolio and personal website. Ingeniero en sistemas | Desarrollador de software."
 >
-  <main class="relative w-full h-screen">
-    <Section
-      paddingDefault="py-16"
-      paddingYSm="sm:py-24"
-      paddingYMd="md:py-40"
-      reduceSpaceBetweenMd={true}
+  <NavBar />
+
+  <Section
+    paddingDefault="py-16"
+    paddingYSm="sm:py-24"
+    paddingYMd="md:py-40"
+    reduceSpaceBetweenMd={true}
+  >
+    <div class="size-24 md:size-36 overflow-hidden rounded-full">
+      <img
+        class="w-full h-full object-cover profile animate--slow animate--profile"
+        src="/profile.webp"
+        alt="Jorge Alvarado headshot"
+      />
+    </div>
+    <h1
+      class="text-3xl md:text-4xl lg:text-5xl font-bold intro animate animate--intro"
     >
-      <div class="size-24 md:size-36 overflow-hidden rounded-full">
-        <img
-          class="w-full h-full object-cover profile animate--slow animate--profile"
-          src="/profile.webp"
-          alt="Jorge Alvarado headshot"
-        />
-      </div>
-      <h1
-        class="text-3xl md:text-4xl lg:text-5xl font-bold intro animate animate--intro"
+      Hola, soy Jorge Alvarado
+    </h1>
+    <h2 class="text-xl lg:text-2xl text-wrap w-full lg:max-w-[700px]">
+      <AboutMeIntro />
+    </h2>
+    <div class="socialPills animate animate--pill-1 flex gap-3 flex-wrap">
+      <SocialPill
+        title="LinkedIn"
+        aria-label="LinkedIn Profile"
+        href="https://linkedin.com/in/jorgep-alvarado"
       >
-        Hola, soy Jorge Alvarado
-      </h1>
-      <h2 class="text-xl lg:text-2xl text-wrap w-full lg:max-w-[700px]">
-        <AboutMeIntro />
-      </h2>
-      <div class="socialPills animate animate--pill-1 flex gap-3 flex-wrap">
-        <SocialPill
-          title="LinkedIn"
-          aria-label="LinkedIn Profile"
-          href="https://linkedin.com/in/jorgep-alvarado"
-        >
-          <LinkedInIcon class="size-4 md:size-6" />
-          LinkedIn
-        </SocialPill>
-        <SocialPill
-          title="Github"
-          aria-label="Github Profile"
-          href="https://github.com/alvarado08"
-        >
-          <GitHubIcon class="size-4 md:size-6" />
-          GitHub
-        </SocialPill>
-        <SocialPill
-          title="Hashnode"
-          aria-label="Hashnode Blog"
-          href="https://jalvarado.hashnode.dev"
-        >
-          <HashNodeIcon class="size-4 md:size-6" />
-          Hashnode
-        </SocialPill>
-      </div>
-    </Section>
+        <LinkedInIcon class="size-4 md:size-6" />
+        LinkedIn
+      </SocialPill>
+      <SocialPill
+        title="Github"
+        aria-label="Github Profile"
+        href="https://github.com/alvarado08"
+      >
+        <GitHubIcon class="size-4 md:size-6" />
+        GitHub
+      </SocialPill>
+      <SocialPill
+        title="Hashnode"
+        aria-label="Hashnode Blog"
+        href="https://jalvarado.hashnode.dev"
+      >
+        <HashNodeIcon class="size-4 md:size-6" />
+        Hashnode
+      </SocialPill>
+    </div>
+  </Section>
 
-    <Section>
-      <SectionHeader title="Lo más reciente">
-        <LatestNewsIcon class="size-6" />
-      </SectionHeader>
-      <LatestNewsCards client:visible />
+  <Section>
+    <SectionHeader title="Lo más reciente">
+      <LatestNewsIcon class="size-6" />
+    </SectionHeader>
+    <LatestNewsCards client:visible />
+    <div class="flex items-center gap-2 flex-wrap">
       <p class="inline-flex items-center gap-x-2">
-        Haz click <HandClick class="size-6" /> o desliza <HandGrab
-          class="size-6"
-        /> para ver más
+        Haz
+        <span class="font-bold">Click</span>
+        <HandClick class="size-6" /> para ver proyecto.
       </p>
-    </Section>
-
-    <Section id="sobremi">
-      <SectionHeader title="Sobre mi">
-        <AboutMeIcon class="size-6" />
-      </SectionHeader>
-      <AboutMe />
-      <AboutMeGallery client:visible />
-      <p class="text-sm font-semibold">
-        Una pequeña galeria de mi trayectoria y mis gatas.
+      <p class="inline-flex items-center gap-x-2">
+        <span class="font-bold">Desliza</span>
+        <HandGrab class="size-6" /> para ver más elementos recientes.
       </p>
-    </Section>
+    </div>
+  </Section>
 
-    <Section id="conocimientos">
-      <SectionHeader title="Conocimientos">
-        <SkillsIcon class="size-6" />
-      </SectionHeader>
-      <Skills />
-    </Section>
+  <Section id="sobremi">
+    <SectionHeader title="Sobre mi">
+      <AboutMeIcon class="size-6" />
+    </SectionHeader>
+    <AboutMe />
+    <AboutMeGallery client:visible />
+    <p class="text-sm font-semibold">
+      Una pequeña galeria de mi trayectoria y mis gatas.
+    </p>
+  </Section>
 
-    <Section id="proyectos">
-      <SectionHeader title="Proyectos">
-        <CodeIcon class="size-6" />
-      </SectionHeader>
-      <Projects />
-    </Section>
+  <Section id="conocimientos">
+    <SectionHeader title="Conocimientos">
+      <SkillsIcon class="size-6" />
+    </SectionHeader>
+    <Skills />
+  </Section>
 
-    <Section id="contacto">
-      <SectionHeader title="Contacto">
-        <MailIcon class="size-6" />
-      </SectionHeader>
-      <ContactForm />
-    </Section>
+  <Section id="proyectos">
+    <SectionHeader title="Proyectos">
+      <CodeIcon class="size-6" />
+    </SectionHeader>
+    <Projects />
+  </Section>
 
-    <Footer />
-  </main>
+  <Section id="contacto">
+    <SectionHeader title="Contacto">
+      <MailIcon class="size-6" />
+    </SectionHeader>
+    <ContactForm />
+  </Section>
+
+  <Footer />
 </Layout>

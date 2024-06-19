@@ -18,7 +18,7 @@ const personalProjects = PROJECTS.filter(({ tab }) =>
 <div
   x-data="{ activeTab: 1, activeClasses: 'font-bold text-yellow-500/90', inactiveClasses: 'font-light', }"
 >
-  <div class="flex items-center gap-5 text-xl lg:text-2xl mb-6">
+  <div class="flex items-center flex-wrap gap-5 text-xl lg:text-2xl mb-6">
     <h4
       @click="activeTab = 1"
       :class="activeTab === 1 ? activeClasses : inactiveClasses"

@@ -48,7 +48,7 @@ const TAGS = {
 };
 export const PROJECTS = [
   {
-    title: "Iglesia Bautista Dios Proveera Blog",
+    title: "Iglesia Bautista Dios Proveera",
     description:
       "Sitio web con enfoque de blog de la Iglesia Bautista Dios Proveera.",
     link: "https://iglesiadiosproveera.com",
@@ -81,7 +81,7 @@ export const PROJECTS = [
     priority: 5,
   },
   {
-    title: "Sitio Web Rayados Waller Academy",
+    title: "Rayados Waller Academy",
     description:
       "Sitio web de la liga local de fútbol Rayados Waller Academy. Ofrece información general de la liga y registraciones en linea.",
     link: "https://rayadoswaller.org",

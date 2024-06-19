@@ -48,7 +48,7 @@ const TAGS = {
 };
 export const PROJECTS = [
   {
-    title: "Iglesia Bautista Dios Proveera Blog",
+    title: "Iglesia Bautista Dios Proveera",
     description:
       "Iglesia Bautista Dios Proveera local church blog-focused website.",
     link: "https://iglesiadiosproveera.com",
@@ -70,7 +70,7 @@ export const PROJECTS = [
     priority: 3,
   },
   {
-    title: "Library App",
+    title: "Library",
     description:
       "A digital bookshelf that can create and delete a book as well as update its reading status.",
     link: "https://alvarado08.github.io/library/",
@@ -81,7 +81,7 @@ export const PROJECTS = [
     priority: 5,
   },
   {
-    title: "Rayados Waller Academy Website",
+    title: "Rayados Waller Academy",
     description:
       "Rayados Waller Academy local soccer league website that serves as a central hub for league information and offers online player registrations.",
     link: "https://rayadoswaller.org",

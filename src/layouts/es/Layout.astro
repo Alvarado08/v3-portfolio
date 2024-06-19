@@ -58,10 +58,9 @@ const { title, description } = Astro.props;
       >
       </div>
     </div>
-    <div class="relative w-full h-screen">
-      <NavBar />
+    <main class="relative mx-auto w-full h-screen max-w-6xl">
       <slot />
-    </div>
+    </main>
   </body>
 </html>
 <style is:global>
@@ -113,6 +112,24 @@ const { title, description } = Astro.props;
   }
   .animate.animate--pill-1 {
     animation-delay: 2s;
+  }
+  .tooltip2 .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+  }
+
+  .tooltip2:hover .tooltiptext {
+    visibility: visible;
   }
   /* Animations */
   @keyframes projectShow {
@@ -176,15 +193,6 @@ const { title, description } = Astro.props;
   .intro {
     animation-name: slideInRight;
     animation-timing-function: ease-in;
-    /* 
-		animation-name: slideInLeft;
-		Duration to complete 1 lap
-		animation-duration: 1s;
-		animation-timing-function: ease-in;
-		animation-delay: 0s;
-		animation-iteration-count: 1;
-		animation-direction: normal;
-		animation-fill-mode: none; */
   }
   .intro-me {
     animation-name: showMe;
