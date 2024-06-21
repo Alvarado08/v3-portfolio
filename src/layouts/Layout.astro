@@ -2,6 +2,9 @@
 import "@fontsource/onest";
 import "@fontsource/onest/600.css";
 
+import NavBar from "../components/sections/NavBar.astro";
+import Footer from "../components/sections/Footer.astro";
+
 interface Props {
   title: string;
   description: string;
@@ -44,33 +47,30 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="relative w-full min-h-screen overflow-x-hidden">
     <div class="fixed left-0 top-0 -z-10 h-full w-full">
       <div
         class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
       >
       </div>
     </div>
-    <main class="mx-auto w-full h-screen max-w-6xl">
-      <slot />
-    </main>
+    <div class="relative w-full h-full flex flex-col mx-auto max-w-6xl">
+      <NavBar />
+      <main class="w-full mx-auto flex-1 max-w-6xl">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
 <style is:global>
-  :root {
-  }
   [x-cloak] {
     display: none;
   }
   html {
+    font-size: 16px;
     font-family: "Onest", sans-serif;
     scroll-behavior: smooth;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow-x: hidden;
   }
   /* Utility Classes */
   .animate {
