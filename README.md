@@ -1,3 +1,3 @@
 # Personal Portfolio v3
 
-![alt text](public/preview.png "Portfolio Preview")
+![alt text](public/preview1.png "Portfolio Preview")
