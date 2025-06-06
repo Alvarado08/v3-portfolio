@@ -70,17 +70,6 @@ export const PROJECTS = [
     priority: 3,
   },
   {
-    title: "Library",
-    description:
-      "A digital bookshelf that can create and delete a book as well as update its reading status.",
-    link: "https://alvarado08.github.io/library/",
-    github: "https://github.com/Alvarado08/library",
-    image: "/projects/library.webp",
-    tab: ["personal"],
-    tags: [TAGS.JAVASCRIPT, TAGS.TAILWIND],
-    priority: 5,
-  },
-  {
     title: "Rayados Waller Academy",
     description:
       "Rayados Waller Academy local soccer league website that serves as a central hub for league information and offers online player registrations.",
@@ -89,17 +78,6 @@ export const PROJECTS = [
     image: "/projects/rayadoswaller.webp",
     tab: ["freelance"],
     tags: [TAGS.WORDPRESS],
-    priority: 4,
-  },
-  {
-    title: "Terminal Portfolio",
-    description:
-      "Everything you expect a personal portfolio to have, except terminal flavored. Offers autocomplete, default commands for navigation and interactions and consumes the JokesAPI.",
-    link: "https://alvarado08.github.io/terminal-portfolio/",
-    github: "https://github.com/Alvarado08/terminal-portfolio",
-    image: "/projects/terminal-portfolio.webp",
-    tab: ["featured", "personal"],
-    tags: [TAGS.JQUERY, TAGS.JAVASCRIPT],
     priority: 4,
   },
   {

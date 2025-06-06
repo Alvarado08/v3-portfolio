@@ -12,7 +12,7 @@ import Projects from "../../components/sections/es/Projects.astro";
 import AboutMeIntro from "../../components/sections/es/AboutMeIntro.astro";
 import ContactForm from "../../components/sections/es/ContactForm.astro";
 import AboutMe from "../../components/sections/es/AboutMe.astro";
-import Skills from "../../components/sections/es/Skills.astro";
+import Skills from "../../components/sections/Skills.astro";
 import AboutMeGallery from "../../components/swiper/AboutMeGallery";
 import Section from "../../components/Section.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
@@ -20,6 +20,7 @@ import LatestNewsIcon from "../../components/icons/LatestNewsIcon.astro";
 import LatestNewsCards from "../../components/swiper/LatestNewsCards";
 import HandClick from "../../components/icons/HandClick.astro";
 import HandGrab from "../../components/icons/HandGrab.astro";
+import TwitterIcon from "../../components/icons/TwitterIcon.astro";
 ---
 
 <Layout
@@ -72,6 +73,14 @@ import HandGrab from "../../components/icons/HandGrab.astro";
         <HashNodeIcon class="size-4 md:size-6" />
         Hashnode
       </SocialPill>
+      <SocialPill
+        title="Twitter"
+        aria-label="Twitter Profile"
+        href="https://x.com/th3ja"
+      >
+        <TwitterIcon class="size-4 md:size-6" />
+        Twitter
+      </SocialPill>
     </div>
   </Section>
 
@@ -99,9 +108,7 @@ import HandGrab from "../../components/icons/HandGrab.astro";
     </SectionHeader>
     <AboutMe />
     <AboutMeGallery client:visible />
-    <p class="text-sm font-semibold">
-      Una pequeña galeria de mi trayectoria y mis gatas.
-    </p>
+    <p class="text-sm font-semibold">Una pequeña galeria de mi trayectoria.</p>
   </Section>
 
   <Section id="conocimientos">

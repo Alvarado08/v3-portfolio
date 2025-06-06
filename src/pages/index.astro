@@ -20,6 +20,7 @@ import LatestNewsIcon from "../components/icons/LatestNewsIcon.astro";
 import LatestNewsCards from "../components/swiper/LatestNewsCards";
 import HandClick from "../components/icons/HandClick.astro";
 import HandGrab from "../components/icons/HandGrab.astro";
+import TwitterIcon from "../components/icons/TwitterIcon.astro";
 ---
 
 <Layout
@@ -72,6 +73,14 @@ import HandGrab from "../components/icons/HandGrab.astro";
         <HashNodeIcon class="size-4 md:size-6" />
         Hashnode
       </SocialPill>
+      <SocialPill
+        title="Twitter"
+        aria-label="Twitter Profile"
+        href="https://x.com/th3ja"
+      >
+        <TwitterIcon class="size-4 md:size-6" />
+        Twitter
+      </SocialPill>
     </div>
   </Section>
 
@@ -98,9 +107,7 @@ import HandGrab from "../components/icons/HandGrab.astro";
     </SectionHeader>
     <AboutMe />
     <AboutMeGallery client:visible />
-    <p class="text-sm font-semibold">
-      A byte-sized gallery of my journey and my cats.
-    </p>
+    <p class="text-sm font-semibold">A byte-sized gallery of my journey.</p>
   </Section>
 
   <Section id="skills">

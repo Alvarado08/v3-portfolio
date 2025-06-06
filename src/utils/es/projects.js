@@ -70,17 +70,6 @@ export const PROJECTS = [
     priority: 3,
   },
   {
-    title: "Librero digital",
-    description:
-      "Librero digital para crear, gestionar estados de lectura y eliminar libros.",
-    link: "https://alvarado08.github.io/library/",
-    github: "https://github.com/Alvarado08/library",
-    image: "/projects/library.webp",
-    tab: ["personal"],
-    tags: [TAGS.JAVASCRIPT, TAGS.TAILWIND],
-    priority: 5,
-  },
-  {
     title: "Rayados Waller Academy",
     description:
       "Sitio web de la liga local de fútbol Rayados Waller Academy. Ofrece información general de la liga y registraciones en linea.",
@@ -89,17 +78,6 @@ export const PROJECTS = [
     image: "/projects/rayadoswaller.webp",
     tab: ["freelance"],
     tags: [TAGS.WORDPRESS],
-    priority: 4,
-  },
-  {
-    title: "Porfolio de Terminal",
-    description:
-      "Porfolio personal con un tema terminal. Ofrece autocompletado, comandos por defecto para la navegación e interacción y consume la API de JokesAPI.",
-    link: "https://alvarado08.github.io/terminal-portfolio/",
-    github: "https://github.com/Alvarado08/terminal-portfolio",
-    image: "/projects/terminal-portfolio.webp",
-    tab: ["featured", "personal"],
-    tags: [TAGS.JQUERY, TAGS.JAVASCRIPT],
     priority: 4,
   },
   {
